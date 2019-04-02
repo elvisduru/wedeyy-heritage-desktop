@@ -1,0 +1,7 @@
+.Feeds {
+  background-color: #dcdee3;
+}
+
+.Feeds > div:nth-last-child(2) {
+  margin-bottom: 59px;
+}

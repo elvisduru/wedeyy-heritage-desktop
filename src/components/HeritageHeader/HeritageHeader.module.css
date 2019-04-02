@@ -1,0 +1,16 @@
+.HeritageHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  padding: 5px 10px;
+  align-items: center;
+  background-color: white;
+}
+
+.HeritageHeader img {
+  width: 30px;
+}
+
+.HeritageHeader a:nth-of-type(2) img {
+  width: 100px;
+}

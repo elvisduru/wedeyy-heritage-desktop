@@ -1,0 +1,18 @@
+.TrendingList {
+  height: 205px;
+  padding: 12px;
+  background-color: white;
+  margin-top: 10px;
+}
+
+.TrendingList h4 {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+  margin-bottom: 14px;
+}
+
+.TrendingList > div {
+  display: flex;
+  overflow-x: scroll;
+}

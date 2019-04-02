@@ -1,0 +1,30 @@
+.PostBar {
+  background-color: white;
+}
+
+.PostBar form {
+  display: flex;
+  align-items: center;
+  padding: 13px 11px;
+}
+
+.PostBar img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.PostBar input {
+  flex: 1 1 auto;
+  margin-left: 15px;
+  padding: 10px;
+  font-size: 13px;
+  font-family: Heebo, sans-serif;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  background-color: #f5f6f6;
+}
+
+.PostBar input::placeholder {
+  color: #888888;
+}

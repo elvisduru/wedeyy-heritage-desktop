@@ -1,0 +1,18 @@
+.SuggestionList {
+  padding: 12px;
+  background-color: white;
+  margin-top: 10px;
+}
+
+.SuggestionList h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+  margin-bottom: 14px;
+}
+
+.SuggestionList > div {
+  display: flex;
+  overflow-x: scroll;
+}

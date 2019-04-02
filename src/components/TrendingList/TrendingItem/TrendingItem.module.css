@@ -1,0 +1,53 @@
+.TrendingItem {
+  width: 112px;
+  height: 131px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 18px;
+}
+
+.TrendingItem img {
+  width: 28px;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-left: 6px;
+}
+
+.TrendingItem > .top {
+  padding: 5px 6px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.TrendingItem > .top > span {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.97);
+}
+
+.TrendingItem > .bottom {
+  height: 40%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.78));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 0 0 5px 5px;
+}
+
+.TrendingItem > .bottom > p {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.TrendingItem > .bottom > p span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 5px;
+}

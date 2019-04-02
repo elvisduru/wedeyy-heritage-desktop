@@ -1,0 +1,39 @@
+.SuggestionItem {
+  width: 106px;
+  height: 143px;
+  text-align: center;
+  margin-right: 21px;
+}
+
+.SuggestionItem button {
+  background-color: rgba(242, 242, 242, 1);
+  border: 1px solid rgba(242, 242, 242, 1);
+  border-radius: 5px;
+  padding: 0 18px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  font-weight: 500;
+  font-family: Heebo, sans-serif;
+  color: rgba(58, 58, 58, 1);
+}
+
+.SuggestionItem button img {
+  width: 20px;
+  margin-right: 3px;
+}
+
+.SuggestionItem > img {
+  width: 91px;
+  height: 91px;
+  border-radius: 50%;
+}
+
+.SuggestionItem > p {
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 17px;
+  color: rgba(58, 58, 58, 1);
+}

@@ -1,0 +1,18 @@
+.DateMatchList {
+  padding: 12px;
+  background-color: white;
+  margin-top: 10px;
+}
+
+.DateMatchList h4 {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+  margin-bottom: 14px;
+}
+
+.DateMatchList > div {
+  display: flex;
+  overflow-x: scroll;
+}
