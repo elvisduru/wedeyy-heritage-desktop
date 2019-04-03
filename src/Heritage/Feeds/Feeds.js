@@ -3,7 +3,6 @@ import styles from "./Feeds.module.css";
 import HeritageHeader from "../../components/HeritageHeader/HeritageHeader";
 import PostBar from "../../components/PostBar/PostBar";
 import TrendingList from "../../components/TrendingList/TrendingList";
-import Drawer from "../../components/Drawer/Drawer";
 import FeedNotification from "../../components/FeedNotification/FeedNotification";
 import Feed from "../../components/Feed/Feed";
 import starIcon from "../../images/star.svg";
@@ -134,7 +133,6 @@ const Feeds = props => {
         btnText="Join Broadcast"
         btnColor="#C44F4F"
       />
-      <Drawer />
     </div>
   );
 };

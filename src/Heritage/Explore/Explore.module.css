@@ -1,0 +1,27 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 1;
+}
+
+.Header .Top {
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  align-items: center;
+  padding: 12px;
+}
+
+.Header .Top img {
+  width: 20px;
+  margin-left: 12px;
+}
+
+.Explore {
+  padding-bottom: 59px;
+}

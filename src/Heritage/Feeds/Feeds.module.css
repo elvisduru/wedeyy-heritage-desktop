@@ -2,6 +2,6 @@
   background-color: #dcdee3;
 }
 
-.Feeds > div:nth-last-child(2) {
+.Feeds > div:last-child {
   margin-bottom: 59px;
 }

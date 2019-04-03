@@ -1,10 +1,18 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./App.css";
-import Feeds from "./Heritage/Feeds/Feeds";
+// import Explore from "./Heritage/Explore/Explore";
+import Drawer from "./components/Drawer/Drawer";
+// import Feeds from "./Heritage/Feeds/Feeds";
 
 class App extends Component {
   render() {
-    return <Feeds />;
+    return (
+      <Fragment>
+        {/* <Feeds /> */}
+        {/* <Explore /> */}
+        <Drawer />
+      </Fragment>
+    );
   }
 }
 
