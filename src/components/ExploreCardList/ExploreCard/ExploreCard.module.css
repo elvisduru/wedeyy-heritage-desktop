@@ -16,6 +16,10 @@
   margin-top: 4px;
 }
 
+.ExploreCard:last-child {
+  margin-bottom: 60px;
+}
+
 .ExploreCard svg {
   fill: white;
   width: 12px;
