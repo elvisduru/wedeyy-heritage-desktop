@@ -1,0 +1,99 @@
+.chart {
+  background: url("https://images.pexels.com/photos/34501/grove-of-trees-away-mood-landscape.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-size: cover;
+  background-position: center;
+  padding-top: 18px;
+  padding-bottom: 59px;
+}
+
+.header {
+  display: flex;
+  justify-items: space-between;
+  align-items: center;
+  padding: 16px 13px;
+  border-bottom: 1px solid rgba(112, 112, 112, 0.35);
+  background-color: white;
+}
+
+.header > img {
+  width: 29px;
+  margin-left: 18px;
+}
+
+.level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 45px;
+  position: relative;
+}
+
+.level:first-of-type::after {
+  content: "";
+  width: 1px;
+  height: 45px;
+  background: #aaa;
+  position: absolute;
+  bottom: -45px;
+  left: 47.8%;
+}
+
+.level:last-of-type::before {
+  content: "";
+  width: 1px;
+  height: 45px;
+  background: #aaa;
+  position: absolute;
+  top: -45px;
+  right: 65px;
+}
+
+.level:last-of-type {
+  justify-content: flex-end;
+}
+
+.personCard img {
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(219, 219, 219, 1);
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.personCard {
+  padding: 17px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16);
+  background-color: white;
+}
+
+.personCard:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.personCard:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.personCard:only-child {
+  border-radius: 5px;
+}
+
+.personCard:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.personCard p:first-of-type {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.personCard p:last-of-type {
+  font-size: 13px;
+  font-weight: lighter;
+  line-height: 19px;
+}

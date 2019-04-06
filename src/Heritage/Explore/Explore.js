@@ -3,10 +3,9 @@ import styles from "./Explore.module.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import menuIcon from "../../images/menu.svg";
 import NavBar from "../../components/NavBar/NavBar";
-// import Top from "./Top/Top";
+import Top from "./Top/Top";
 // import People from "./People/People";
 // import Family from "./Family/Family";
-import Notifications from "../Notifications/Notifications";
 
 const Explore = props => {
   const navList = ["Top", "People", "Family", "Tags", "Places"];
@@ -21,10 +20,9 @@ const Explore = props => {
           <NavBar navList={navList} />
         </div>
       </div>
-      {/* <Top /> */}
+      <Top />
       {/* <People /> */}
       {/* <Family /> */}
-      <Notifications />
     </div>
   );
 };

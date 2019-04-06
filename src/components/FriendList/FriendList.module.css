@@ -1,0 +1,30 @@
+.AddFriend {
+  text-align: center;
+}
+
+.AddFriend img {
+  width: 30px;
+  margin: 25px;
+}
+
+.AddFriend p {
+  font-size: 12px;
+  color: #000;
+  line-height: 18px;
+  margin-top: 2px;
+  font-weight: bold;
+}
+
+.FriendList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.FriendList > div {
+  margin-bottom: 21px;
+}
+
+.FriendList > div:not(:nth-child(3n)) {
+  width: 84px;
+  margin-right: 44px;
+}

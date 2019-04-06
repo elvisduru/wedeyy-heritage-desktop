@@ -1,0 +1,7 @@
+.Friends {
+  padding: 11px 14px;
+}
+
+.Friends > div:first-child {
+  margin-bottom: 18px;
+}
