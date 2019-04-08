@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./TrendingList.module.css";
 import TrendingItem from "./TrendingItem/TrendingItem";
+import { Link } from "react-router-dom";
 
 const TrendingList = props => {
   const trendingList = [
@@ -39,14 +40,16 @@ const TrendingList = props => {
       <div>
         {trendingList.map((trendingItem, index) => {
           return (
-            <TrendingItem
-              background={trendingItem.background}
-              username={trendingItem.username}
-              avatar={trendingItem.avatar}
-              videoLength={trendingItem.videoLength}
-              count={index + 1}
-              key={trendingItem.username + index}
-            />
+            <Link to="/explore/top">
+              <TrendingItem
+                background={trendingItem.background}
+                username={trendingItem.username}
+                avatar={trendingItem.avatar}
+                videoLength={trendingItem.videoLength}
+                count={index + 1}
+                key={trendingItem.username + index}
+              />
+            </Link>
           );
         })}
       </div>

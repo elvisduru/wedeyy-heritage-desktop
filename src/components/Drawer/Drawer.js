@@ -20,7 +20,7 @@ const Drawer = props => {
         </svg>
         <h6 className={styles.active}>Feeds</h6>
       </NavLink>
-      <NavLink to="/explore">
+      <NavLink to="/explore/top">
         <svg
           version="1.1"
           id="Capa_1"
