@@ -12,7 +12,7 @@
 
 .stats > div p:last-child {
   font-size: 22px;
-  font-weight: bold;
+  font-family: heebobold;
   line-height: 32px;
   color: #3a3a3a;
 }
@@ -40,7 +40,7 @@
   font-size: 20px;
   line-height: 29px;
   color: #3a3a3a;
-  font-weight: 500;
+  font-family: heebomedium;
 }
 
 .sectionHeader a {
@@ -55,7 +55,7 @@
   padding: 17px 41px;
   text-align: center;
   font-size: 11px;
-  font-weight: lighter;
+  font-family: heebolight;
   margin-top: 13px;
   line-height: 17px;
 }
@@ -142,14 +142,14 @@
 .events > div p {
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   font-size: 14px;
-  font-weight: 500;
   line-height: 21px;
+  font-family: heebomedium;
   margin: 10px 0;
 }
 
 .events > div small {
   font-size: 9px;
-  font-weight: lighter;
+  font-family: heebolight;
 }
 
 .events > div img {
@@ -171,7 +171,7 @@
 }
 
 .members > div p:first-of-type {
-  font-weight: bold;
+  font-family: heebobold;
   font-size: 20px;
   line-height: 29px;
 }

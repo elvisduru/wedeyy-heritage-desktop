@@ -1,0 +1,11 @@
+button {
+  color: rgba(36, 80, 97, 1);
+  border: 1px solid rgba(36, 80, 97, 1);
+  background-color: white;
+  outline: none;
+  font-size: 12px;
+}
+
+.ToggleSelect {
+  display: flex;
+}

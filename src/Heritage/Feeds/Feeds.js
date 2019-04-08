@@ -11,7 +11,7 @@ import collectionsIcon from "../../images/collections.svg";
 import SuggestionList from "../../components/SuggestionList/SuggestionList";
 import DateMatchList from "../../components/DateMatchList/DateMatchList";
 
-const Feeds = props => {
+const Feeds = () => {
   return (
     <div className={styles.Feeds}>
       <HeritageHeader />
@@ -22,6 +22,7 @@ const Feeds = props => {
         heading="You just earned a Star."
         text="Start Family Tree to earn another."
         btnText="Go to Tree"
+        target="/profile/tree"
       />
       <Feed
         avatar="http://i.pravatar.cc/100"
@@ -132,6 +133,7 @@ const Feeds = props => {
         text="Join Kehinde and 200 others on his live broadcast. Make live contribution to the ongoing event."
         btnText="Join Broadcast"
         btnColor="#C44F4F"
+        target="/broadcast"
       />
     </div>
   );

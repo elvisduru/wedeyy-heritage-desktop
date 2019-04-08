@@ -1,0 +1,60 @@
+.FamilyInfo h1 {
+  color: #1c1e21;
+  font-size: 43px;
+  text-align: center;
+  line-height: 55px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  flex-shrink: 0;
+  font-family: heebobold, sans-serif;
+}
+
+.body {
+  color: rgba(28, 30, 33, 1);
+  line-height: 32px;
+  font-size: 14px;
+  overflow-y: scroll;
+  font-family: heeboregular, sans-serif;
+  text-align: center;
+}
+
+.body br {
+  display: block;
+}
+
+.FamilyInfo {
+  width: 100vw;
+  padding: 24px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 39px;
+  background-color: white;
+}
+
+.controls {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls button {
+  color: rgba(28, 30, 33, 1);
+  font-size: 14px;
+  line-height: 32px;
+  font-family: heebomedium;
+  background-color: rgba(81, 140, 162, 1);
+  border: 1px solid rgba(41, 41, 41, 1);
+  border-radius: 3px;
+  font-family: heebobold;
+}
+
+.FamilyInfo > img {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 20px;
+}

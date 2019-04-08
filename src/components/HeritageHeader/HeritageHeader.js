@@ -3,16 +3,17 @@ import styles from "./HeritageHeader.module.css";
 import Logo from "../Logo/Logo";
 import broadcastIcon from "../../images/broadcast.svg";
 import menuIcon from "../../images/menu.svg";
+import { Link } from "react-router-dom";
 
 const HeritageHeader = props => {
   return (
     <div className={styles.HeritageHeader}>
-      <a href="/">
+      <Link to="/broadcast">
         <img src={broadcastIcon} alt="broadcast" />
-      </a>
-      <a href="/">
+      </Link>
+      <Link to="/">
         <Logo />
-      </a>
+      </Link>
       <img src={menuIcon} alt="menu" />
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./About.module.css";
 import editIcon from "../../../images/edit.svg";
 
@@ -25,7 +26,7 @@ const About = () => {
         <div className={styles.sectionHeader}>
           <h3>Biography</h3>
           <p>
-            <a href="./">Edit</a>
+            <Link to="/">Edit</Link>
           </p>
         </div>
         <p>No Biography Here</p>
@@ -71,7 +72,7 @@ const About = () => {
         <div className={styles.sectionHeader}>
           <h3>Saved Memories</h3>
           <p>
-            <a href="./">View All</a>
+            <Link to="/">View All</Link>
           </p>
         </div>
         <div>
@@ -99,7 +100,7 @@ const About = () => {
         <div className={styles.sectionHeader}>
           <h3>Life Events</h3>
           <p>
-            <a href="./">Edit</a>
+            <Link to="/">Edit</Link>
           </p>
         </div>
         <div className={styles.events}>
@@ -136,7 +137,7 @@ const About = () => {
         <div className={styles.sectionHeader}>
           <h3>Family Members</h3>
           <p>
-            <a href="./">View Tree</a>
+            <Link to="/profile/tree">View Tree</Link>
           </p>
         </div>
         <div className={styles.members}>

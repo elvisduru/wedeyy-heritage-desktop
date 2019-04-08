@@ -24,8 +24,7 @@
   display: flex;
   align-items: center;
   margin-top: 8px;
-  font-weight: 500;
-  font-family: Heebo, sans-serif;
+  font-family: heebomedium, sans-serif;
   color: rgba(58, 58, 58, 1);
   font-size: 9px;
 }
@@ -44,10 +43,10 @@
 
 .info p {
   font-size: 12px;
-  font-weight: bold;
+  font-family: heebobold;
 }
 
 .info span {
-  font-weight: lighter;
+  font-family: heebolight;
   font-size: 10px;
 }

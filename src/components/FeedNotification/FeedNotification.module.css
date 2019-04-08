@@ -8,23 +8,20 @@
   border-radius: 10px;
   background-color: white;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  font-family: Heebo, sans-serif;
-  font-weight: normal;
+  font-family: heeboregular, sans-serif;
   color: #1c1e21;
   text-align: center;
 }
 
 .FeedNotification h2 {
-  font-family: Heebo, sans-serif;
-  font-weight: normal;
+  font-family: heeboregular, sans-serif;
   font-size: 25px;
   margin-bottom: 5px;
   margin-top: 16px;
 }
 
 .FeedNotification p {
-  font-family: Heebo, sans-serif;
-  font-weight: lighter;
+  font-family: heebolight, sans-serif;
   font-size: 14px;
   margin-top: 4px;
   margin-bottom: 16px;

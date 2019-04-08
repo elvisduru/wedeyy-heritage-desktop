@@ -45,7 +45,7 @@
 
 .ExploreCard > div:first-child p {
   font-size: 12px;
-  font-weight: lighter;
+  font-family: heebolight;
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
@@ -56,6 +56,6 @@
 
 .ExploreCard > div:last-child span {
   font-size: 9px;
-  font-weight: lighter;
+  font-family: heebolight;
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }

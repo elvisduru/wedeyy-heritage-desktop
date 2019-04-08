@@ -13,7 +13,7 @@
 }
 
 .NotificationItem strong {
-  font-weight: bold;
+  font-family: heebobold;
 }
 
 .NotificationItem > div {
@@ -25,12 +25,12 @@
 
 .NotificationItem > div p {
   font-size: 13px;
-  font-weight: lighter;
+  font-family: heebolight;
   line-height: 19px;
 }
 
 .NotificationItem > div span {
   font-size: 8px;
-  font-weight: 500;
   color: rgba(81, 140, 162, 1);
+  font-family: heebomedium;
 }

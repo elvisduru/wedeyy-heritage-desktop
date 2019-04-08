@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./Drawer.module.css";
+import { NavLink } from "react-router-dom";
 
 const Drawer = props => {
   return (
     <div className={styles.Drawer}>
-      <a href="/">
+      <NavLink to="/" exact>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 86.19 58.15"
@@ -18,8 +19,8 @@ const Drawer = props => {
           </g>
         </svg>
         <h6 className={styles.active}>Feeds</h6>
-      </a>
-      <a href="/">
+      </NavLink>
+      <NavLink to="/explore">
         <svg
           version="1.1"
           id="Capa_1"
@@ -36,8 +37,8 @@ const Drawer = props => {
         </svg>
 
         <h6>Explore</h6>
-      </a>
-      <a href="/">
+      </NavLink>
+      <NavLink to="/connect">
         <svg
           version="1.1"
           id="Capa_1"
@@ -68,8 +69,8 @@ const Drawer = props => {
         </svg>
 
         <h6>Connect</h6>
-      </a>
-      <a href="/">
+      </NavLink>
+      <NavLink to="/notifications">
         <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512">
           <g>
             <g>
@@ -105,8 +106,8 @@ const Drawer = props => {
         </svg>
 
         <h6>Notify</h6>
-      </a>
-      <a href="/">
+      </NavLink>
+      <NavLink to="/profile/about">
         <svg
           version="1.1"
           id="Capa_1"
@@ -127,7 +128,7 @@ const Drawer = props => {
         </svg>
 
         <h6>Profile</h6>
-      </a>
+      </NavLink>
     </div>
   );
 };

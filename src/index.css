@@ -3,6 +3,62 @@
    License: none (public domain)
 */
 
+@font-face {
+  font-family: "heeboblack";
+  src: url("./fonts/heebo-black-webfont.woff2") format("woff2"),
+    url("./fonts/heebo-black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "heebobold";
+  src: url("./fonts/heebo-bold-webfont.woff2") format("woff2"),
+    url("./fonts/heebo-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "heeboextrabold";
+  src: url("./fonts/heebo-extrabold-webfont.woff2") format("woff2"),
+    url("./fonts/heebo-extrabold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "heebolight";
+  src: url("./fonts/heebo-light-webfont.woff2") format("woff2"),
+    url("./fonts/heebo-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "heebomedium";
+  src: url("./fonts/heebo-medium-webfont.woff2") format("woff2"),
+    url("./fonts/heebo-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "heeboregular";
+  src: url("./fonts/heebo-regular-webfont.woff2") format("woff2"),
+    url("./fonts/heebo-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "heebothin";
+  src: url("./fonts/heebo-thin-webfont.woff2") format("woff2"),
+    url("./fonts/heebo-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -140,7 +196,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: Heebo;
+  font-family: "heeboregular";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -158,4 +214,14 @@ code {
   padding: none;
   position: fixed;
   z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a.active {
+  font-family: heebobold;
+  color: black;
 }

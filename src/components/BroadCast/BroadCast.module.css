@@ -21,12 +21,12 @@
 
 .Header h2 {
   font-size: 20px;
-  font-weight: 400;
+  font-family: heebomedium;
 }
 
 .BroadCast div:last-child p {
   font-size: 25px;
-  font-weight: bold;
+  font-family: heebobold;
   margin-top: 11px;
 }
 
