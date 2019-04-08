@@ -26,5 +26,5 @@
 
 .FriendList > div:not(:nth-child(3n)) {
   width: 84px;
-  margin-right: 44px;
+  margin-right: 37px;
 }
