@@ -9,6 +9,7 @@ import closeIcon from "../../../images/close-button.svg";
 import NavHeader from "../../../components/NavHeader/NavHeader";
 import Switch from "react-switch";
 import ToggleSelect from "../../../containers/ToggleSelect/ToggleSelect";
+import UserProfile from "../UserProfile/UserProfile";
 
 class Tree extends React.Component {
   state = {
@@ -55,6 +56,7 @@ class Tree extends React.Component {
     uploadCrestOpen: false,
     treeSettingsOpen: false,
     familyName: "Omotoso",
+    openUser: false,
     familyInfo: (
       <p>
         Born in a small Oklahoma farm on August 12, 1923, John Doyle began his
@@ -89,6 +91,14 @@ class Tree extends React.Component {
 
   closeFamilyInfo = () => {
     this.setState({ familyInfoOpen: false });
+  };
+
+  openUserProfile = () => {
+    this.setState({ openUser: true });
+  };
+
+  closeUserProfile = () => {
+    this.setState({ openUser: false });
   };
 
   closeUploadCrest = () => {
@@ -190,6 +200,7 @@ class Tree extends React.Component {
                       username={person.username}
                       relationship={person.relationship}
                       key={person.username + index}
+                      click={this.openUserProfile}
                     />
                   );
                 })}
@@ -200,6 +211,13 @@ class Tree extends React.Component {
         {familyInfo}
         {uploadCrest}
         {treeSettings}
+        {this.state.openUser ? (
+          <UserProfile
+            username="Kehinde Omotoso"
+            occupation="Software Engineer"
+            click={this.closeUserProfile}
+          />
+        ) : null}
       </div>
     );
   }

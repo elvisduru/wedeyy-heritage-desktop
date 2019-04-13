@@ -40,14 +40,13 @@ const TrendingList = props => {
       <div>
         {trendingList.map((trendingItem, index) => {
           return (
-            <Link to="/explore/top">
+            <Link to="/explore/top" key={trendingItem.username + index}>
               <TrendingItem
                 background={trendingItem.background}
                 username={trendingItem.username}
                 avatar={trendingItem.avatar}
                 videoLength={trendingItem.videoLength}
                 count={index + 1}
-                key={trendingItem.username + index}
               />
             </Link>
           );
