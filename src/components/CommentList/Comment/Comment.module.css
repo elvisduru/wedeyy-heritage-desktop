@@ -45,6 +45,11 @@
   font-family: heebomedium;
 }
 
+.header h4 {
+  color: #000000;
+  font-family: heebomedium;
+}
+
 .header img {
   width: 16px;
 }
@@ -59,6 +64,7 @@
 
 .bottom span {
   margin-right: 25px;
+  color: #888888;
 }
 
 .bottom span mark {

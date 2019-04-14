@@ -6,10 +6,7 @@ import likedIcon from "../../images/liked.svg";
 import shareIcon from "../../images/share.svg";
 import commentsIcon from "../../images/comments.svg";
 import styles from "./Feed.module.css";
-import closeBtn from "../../images/close-button.svg";
-import CommentList from "../../components/CommentList/CommentList";
-import emojiIcon from "../../images/faces.svg";
-import albumIcon from "../../images/album.svg";
+import Comments from "../Comments/Comments";
 
 class Feed extends React.Component {
   state = {
@@ -20,24 +17,10 @@ class Feed extends React.Component {
     this.setState(prevState => {
       return { commentOverlayOpen: !prevState.commentOverlayOpen };
     });
-    console.log("done");
   };
   render() {
     let commentOverlay = this.state.commentOverlayOpen ? (
-      <div className={styles.commentOverlay}>
-        <div className={styles.header}>
-          <p>comments</p>
-          <img src={closeBtn} onClick={this.handleCommentOverlay} alt="close" />
-        </div>
-        <CommentList />
-        <div className={styles.addComment}>
-          <input type="text" placeholder="Write Comment" />
-          <div>
-            <img src={emojiIcon} alt="emoji" />
-            <img src={albumIcon} alt="album" />
-          </div>
-        </div>
-      </div>
+      <Comments click={this.handleCommentOverlay} />
     ) : null;
     return (
       <div className={styles.Feed}>
