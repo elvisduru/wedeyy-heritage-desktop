@@ -7,6 +7,7 @@ import StarRatingComponent from "react-star-rating-component";
 import About from "./About/About";
 import Friends from "./Friends/Friends";
 import Tree from "./Tree/Tree";
+import Album from "./Album/Album";
 
 const Profile = () => {
   return (
@@ -54,11 +55,8 @@ const Profile = () => {
         <Route path="/profile/friends" component={Friends} />
         <Route path="/profile/about" component={About} />
         <Route path="/profile/tree" component={Tree} />
+        <Route path="/profile/album" component={Album} />
       </Switch>
-      {/* <Wall /> */}
-      {/* <Friends /> */}
-      {/* <About /> */}
-      {/* <Tree /> */}
     </div>
   );
 };

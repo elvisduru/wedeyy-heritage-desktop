@@ -34,6 +34,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+}
+
+.album {
+  margin-top: 30px;
 }
 
 .sectionHeader h3 {

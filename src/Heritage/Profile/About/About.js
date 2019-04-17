@@ -31,69 +31,77 @@ const About = () => {
         </div>
         <p>No Biography Here</p>
       </div>
-      <div className={styles.masonry}>
-        <figure className={styles.masonryBrick}>
-          <img
-            className={styles.masonryImg}
-            src="http://i.pravatar.cc/300"
-            alt="avatar"
-          />
-        </figure>
-        <figure className={styles.masonryBrick}>
-          <img
-            className={styles.masonryImg}
-            src="http://i.pravatar.cc/301"
-            alt="avatar"
-          />
-        </figure>
-        <figure className={styles.masonryBrick}>
-          <img
-            className={styles.masonryImg}
-            src="http://i.pravatar.cc/302"
-            alt="avatar"
-          />
-        </figure>
-        <figure className={styles.masonryBrick}>
-          <img
-            className={styles.masonryImg}
-            src="http://i.pravatar.cc/303"
-            alt="avatar"
-          />
-        </figure>
-        <figure className={styles.masonryBrick}>
-          <img
-            className={styles.masonryImg}
-            src="http://i.pravatar.cc/304"
-            alt="avatar"
-          />
-        </figure>
-      </div>
-      <div className={styles.Memories}>
+      <div className={styles.album}>
         <div className={styles.sectionHeader}>
-          <h3>Saved Memories</h3>
+          <h3>Photos and Videos</h3>
           <p>
-            <Link to="/">View All</Link>
+            <Link to="/profile/album">View All</Link>
           </p>
         </div>
-        <div>
-          <figure>
-            <img src="http://i.pravatar.cc/305" alt="avatar" />
+        <div className={styles.masonry}>
+          <figure className={styles.masonryBrick}>
+            <img
+              className={styles.masonryImg}
+              src="http://i.pravatar.cc/300"
+              alt="avatar"
+            />
           </figure>
-          <figure>
-            <img src="http://i.pravatar.cc/306" alt="avatar" />
+          <figure className={styles.masonryBrick}>
+            <img
+              className={styles.masonryImg}
+              src="http://i.pravatar.cc/301"
+              alt="avatar"
+            />
           </figure>
-          <figure>
-            <img src="http://i.pravatar.cc/307" alt="avatar" />
+          <figure className={styles.masonryBrick}>
+            <img
+              className={styles.masonryImg}
+              src="http://i.pravatar.cc/302"
+              alt="avatar"
+            />
           </figure>
-          <figure>
-            <img src="http://i.pravatar.cc/308" alt="avatar" />
+          <figure className={styles.masonryBrick}>
+            <img
+              className={styles.masonryImg}
+              src="http://i.pravatar.cc/303"
+              alt="avatar"
+            />
           </figure>
-          <figure>
-            <img src="http://i.pravatar.cc/309" alt="avatar" />
+          <figure className={styles.masonryBrick}>
+            <img
+              className={styles.masonryImg}
+              src="http://i.pravatar.cc/304"
+              alt="avatar"
+            />
           </figure>
-          <figure>
-            <img src="http://i.pravatar.cc/310" alt="avatar" />
-          </figure>
+        </div>
+        <div className={styles.Memories}>
+          <div className={styles.sectionHeader}>
+            <h3>Saved Memories</h3>
+            <p>
+              <Link to="/">View All</Link>
+            </p>
+          </div>
+          <div>
+            <figure>
+              <img src="http://i.pravatar.cc/305" alt="avatar" />
+            </figure>
+            <figure>
+              <img src="http://i.pravatar.cc/306" alt="avatar" />
+            </figure>
+            <figure>
+              <img src="http://i.pravatar.cc/307" alt="avatar" />
+            </figure>
+            <figure>
+              <img src="http://i.pravatar.cc/308" alt="avatar" />
+            </figure>
+            <figure>
+              <img src="http://i.pravatar.cc/309" alt="avatar" />
+            </figure>
+            <figure>
+              <img src="http://i.pravatar.cc/310" alt="avatar" />
+            </figure>
+          </div>
         </div>
       </div>
       <div className={styles.LifeEvents}>
