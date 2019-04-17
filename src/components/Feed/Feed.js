@@ -7,11 +7,13 @@ import shareIcon from "../../images/share.svg";
 import commentsIcon from "../../images/comments.svg";
 import styles from "./Feed.module.css";
 import Comments from "../Comments/Comments";
+import playIcon from "../../images/play-button.svg";
 
 class Feed extends React.Component {
   state = {
     commentOverlayOpen: false,
-    feedOverlay: false
+    feedOverlayImage: false,
+    feedOverlayVideo: false
   };
 
   handleCommentOverlay = () => {
@@ -19,6 +21,24 @@ class Feed extends React.Component {
       return { commentOverlayOpen: !prevState.commentOverlayOpen };
     });
   };
+
+  static overlaySrc;
+
+  openFeedOverlayImage = e => {
+    this.setState({ feedOverlayImage: true });
+    this.overlaySrc = e.currentTarget.src;
+  };
+
+  openFeedOverlayVideo = e => {
+    console.log(e);
+    this.setState({ feedOverlayVideo: true });
+    this.overlaySrc = e.currentTarget.src;
+  };
+
+  closeFeedOverlay = () => {
+    this.setState({ feedOverlayImage: false, feedOverlayVideo: false });
+  };
+
   render() {
     let commentOverlay = this.state.commentOverlayOpen ? (
       <Comments click={this.handleCommentOverlay} />
@@ -42,12 +62,22 @@ class Feed extends React.Component {
             <source src={this.props.video} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+          <img
+            onClick={e => this.openFeedOverlayVideo(e)}
+            className={styles.playIcon}
+            src={playIcon}
+            alt="play"
+          />
         </div>
       );
     } else if (this.props.contentType === "image") {
       content = (
         <div className={styles.contentImage}>
-          <img src={this.props.image} alt="" />
+          <img
+            onClick={e => this.openFeedOverlayImage(e)}
+            src={this.props.image}
+            alt=""
+          />
         </div>
       );
     } else if (this.props.contentType === "imageAd") {
@@ -66,13 +96,155 @@ class Feed extends React.Component {
     } else if (this.props.contentType === "imageText") {
       content = (
         <div className={styles.contentImageText}>
-          <img src={this.props.image} alt="" />
+          <img
+            src={this.props.image}
+            alt=""
+            onClick={e => this.openFeedOverlayImage(e)}
+          />
           <div className={styles.description}>
             <p>{this.props.caption}</p>
           </div>
         </div>
       );
     }
+
+    let ImageOverlay = this.state.feedOverlayImage ? (
+      <div className={styles.FeedOverlay}>
+        <div className={styles.Header}>
+          <div>
+            <img src={this.props.avatar} alt="avatar" />
+            <div className={styles.info}>
+              <h3 className="user">{this.props.user}</h3>
+              <span>
+                {this.props.created}
+                <span>
+                  <img src={tagsIcon} alt="tags" />
+                  {this.props.tags}
+                </span>
+              </span>
+            </div>
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="612px"
+              height="612px"
+              viewBox="0 0 612 612"
+            >
+              <g>
+                <g>
+                  <circle cx="69.545" cy="306" r="69.545" />
+                  <circle cx="306" cy="306" r="69.545" />
+                  <circle cx="542.455" cy="306" r="69.545" />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div className={styles.contentImageText}>
+          <img src={this.overlaySrc} alt="" onClick={this.closeFeedOverlay} />
+          {this.props.caption ? (
+            <div className={styles.description}>
+              <p>{this.props.caption}</p>
+            </div>
+          ) : null}
+        </div>
+        <div className={styles.footer}>
+          <div className={styles.top}>
+            <span>
+              {this.props.reachCount} <span className={styles.mark}>Reach</span>
+            </span>
+            <div>
+              <span>
+                {this.props.shareCount}{" "}
+                <span className={styles.mark}>Shares</span>
+              </span>
+              <span onClick={this.handleCommentOverlay}>
+                {this.props.commentCount}{" "}
+                <span className={styles.mark}>Comments</span>
+              </span>
+            </div>
+          </div>
+          <div className={styles.bottom}>
+            <span>
+              <span className={styles.likeCount}>{this.props.likeCount}</span>{" "}
+              <span className={styles.mark}>Likes</span>
+            </span>
+            <div className="controls">
+              <button>
+                <img src={likedIcon} alt="like" />
+              </button>
+              <button>
+                <img src={shareIcon} alt="share" />
+              </button>
+              <button>
+                <img
+                  src={commentsIcon}
+                  alt="comments"
+                  onClick={this.handleCommentOverlay}
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+        {commentOverlay}
+      </div>
+    ) : null;
+
+    let videoOverlay = this.state.feedOverlayVideo ? (
+      <div className={styles.FeedOverlay}>
+        <div className={styles.Header}>
+          <div>
+            <img src={this.props.avatar} alt="avatar" />
+            <div className={styles.info}>
+              <h3 className="user">{this.props.user}</h3>
+              <span
+                style={{
+                  color: "#ffffff",
+                  textShadow: "0 3px 6px rgba(0, 0, 0, 0.16)"
+                }}
+              >
+                {this.props.created}
+                <span
+                  style={{
+                    color: "#ffffff",
+                    textShadow: "0 3px 6px rgba(0, 0, 0, 0.16)"
+                  }}
+                >
+                  <img src={tagsIcon} alt="tags" />
+                  {this.props.tags}
+                </span>
+              </span>
+            </div>
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="612px"
+              height="612px"
+              viewBox="0 0 612 612"
+            >
+              <g>
+                <g>
+                  <circle cx="69.545" cy="306" r="69.545" />
+                  <circle cx="306" cy="306" r="69.545" />
+                  <circle cx="542.455" cy="306" r="69.545" />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div className={styles.contentVideo} onClick={this.closeFeedOverlay}>
+          <video id="background-video" autoPlay controls>
+            <source src={this.props.video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    ) : null;
+
     return (
       <div className={styles.Feed}>
         <div className={styles.Header}>
@@ -131,6 +303,8 @@ class Feed extends React.Component {
           </div>
         </div>
         {commentOverlay}
+        {ImageOverlay}
+        {videoOverlay}
       </div>
     );
   }

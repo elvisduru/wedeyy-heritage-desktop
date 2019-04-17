@@ -11,6 +11,7 @@ import collectionsIcon from "../../images/collections.svg";
 import SuggestionList from "../../components/SuggestionList/SuggestionList";
 import DateMatchList from "../../components/DateMatchList/DateMatchList";
 import video from "../../videos/live.mp4";
+import feedImg from "../../images/feed-image.jpg";
 
 const Feeds = () => {
   return (
@@ -30,7 +31,7 @@ const Feeds = () => {
         user="John Doe"
         created="Feb 10 at 01:11 PM"
         tags={8}
-        image="http://i.pravatar.cc/400"
+        image={feedImg}
         reachCount="15k"
         contentType="image"
         likeCount={77}
@@ -91,7 +92,7 @@ const Feeds = () => {
         user="John Doe"
         created="Feb 10 at 01:11 PM"
         tags={8}
-        image="http://i.pravatar.cc/403"
+        image={feedImg}
         caption="Pellentesque tincidunt tristique neque, eget venenatis enim gravida quis. Fusce at egestas libero. Cras convallis egestas ullamcorper. Suspendisse sed ultricies nisl, pharetra rutrum mauris. Vestibulum at massa dui. Morbi et purus velit. Etiam tristique, justo eu condimentum efficitur, purus velit facilisis sem, id fringilla tortor quam quis dolor. Praesent ultricies dignissim ex, at volutpat sapien ullamcorper rhoncus. Curabitur quam velit, ullamcorper ut congue eget, convallis et velit. Donec placerat, magna eu venenatis tempus, dui sapien aliquam libero, sit amet maximus erat massa quis nisi. Integer pharetra auctor arcu, non tincidunt dui fermentum ut. Nullam interdum sapien id mauris dapibus, a pharetra purus rhoncus. Nullam viverra iaculis tristique. Donec quis mauris ipsum. Nunc vehicula magna at erat tristique rutrum."
         reachCount="15k"
         contentType="imageText"

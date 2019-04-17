@@ -175,13 +175,15 @@
   border-radius: 3px;
 }
 
-.contentImageText .description {
+.contentImageText .description,
+.contentVideo .description {
   overflow: hidden;
   position: relative;
   height: 6.7em;
 }
 
-.contentImageText .description:after {
+.contentImageText .description:after,
+.contentVideo .description:after {
   content: "";
   text-align: right;
   position: absolute;
@@ -195,10 +197,80 @@
     rgba(255, 255, 255, 1) 50%
   );
 }
-/* 
-.contentImageText .description p {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-height: 100px;
-} */
+
+.FeedOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 1001;
+  color: white;
+}
+
+.FeedOverlay .contentImageText .description:after {
+  content: "...";
+  background: none;
+  right: 10px;
+  bottom: 5px;
+}
+
+.FeedOverlay .info span {
+  color: #888888;
+}
+
+.FeedOverlay .footer,
+.FeedOverlay .mark,
+.FeedOverlay .likeCount,
+.FeedOverlay .description {
+  color: white;
+}
+
+.FeedOverlay .bottom button {
+  padding: 7px;
+  background-color: white;
+  border-radius: 50%;
+  width: 41px;
+  height: 41px;
+}
+
+.FeedOverlay .bottom button img {
+  vertical-align: middle;
+}
+
+.FeedOverlay .contentVideo video,
+.FeedOverlay .contentImage img,
+.FeedOverlay .contentImageAd img,
+.FeedOverlay .contentImageText img {
+  height: 378px;
+}
+
+.FeedOverlay .Header > div > img {
+  width: 52px;
+  margin-left: unset;
+  margin-bottom: unset;
+}
+
+.FeedOverlay .Header svg {
+  fill: white;
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+  margin-bottom: 15px;
+}
+
+.contentVideo {
+  position: relative;
+}
+
+.playIcon {
+  position: absolute;
+  top: calc(50% - 35px);
+  left: calc(50% - 35px);
+  width: 70px;
+  background-color: white;
+  border-radius: 50%;
+  border: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
