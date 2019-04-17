@@ -10,7 +10,8 @@ import Comments from "../Comments/Comments";
 
 class Feed extends React.Component {
   state = {
-    commentOverlayOpen: false
+    commentOverlayOpen: false,
+    feedOverlay: false
   };
 
   handleCommentOverlay = () => {
@@ -22,6 +23,56 @@ class Feed extends React.Component {
     let commentOverlay = this.state.commentOverlayOpen ? (
       <Comments click={this.handleCommentOverlay} />
     ) : null;
+
+    let content;
+
+    if (this.props.contentType === "textBackground") {
+      content = (
+        <div className={styles.contentText}>
+          <div>
+            <h2>{this.props.quote}</h2>
+            <p>{this.props.author}</p>
+          </div>
+        </div>
+      );
+    } else if (this.props.contentType === "video") {
+      content = (
+        <div className={styles.contentVideo}>
+          <video controls>
+            <source src={this.props.video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      );
+    } else if (this.props.contentType === "image") {
+      content = (
+        <div className={styles.contentImage}>
+          <img src={this.props.image} alt="" />
+        </div>
+      );
+    } else if (this.props.contentType === "imageAd") {
+      content = (
+        <div className={styles.contentImageAd}>
+          <img src={this.props.image} alt="" />
+          <div className={styles.description}>
+            <div className={styles.heading}>
+              <p className={styles.text}>{this.props.text}</p>
+              <button>{this.props.btnText}</button>
+            </div>
+            <span>{this.props.brand}</span>
+          </div>
+        </div>
+      );
+    } else if (this.props.contentType === "imageText") {
+      content = (
+        <div className={styles.contentImageText}>
+          <img src={this.props.image} alt="" />
+          <div className={styles.description}>
+            <p>{this.props.caption}</p>
+          </div>
+        </div>
+      );
+    }
     return (
       <div className={styles.Feed}>
         <div className={styles.Header}>
@@ -40,10 +91,7 @@ class Feed extends React.Component {
             <img src={moreIcon} alt="More" />
           </div>
         </div>
-        <div className={styles.contentText}>
-          {/* write logic to render content based on its type; img, text, video, etc */}
-          {this.props.content}
-        </div>
+        {content}
         <div className={styles.footer}>
           <div className={styles.top}>
             <span>
