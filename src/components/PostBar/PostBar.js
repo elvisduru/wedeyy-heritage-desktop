@@ -12,7 +12,8 @@ const PostBar = props => {
         <input
           type="text"
           placeholder="Share your thoughts, or post something."
-          disabled={props.disabled}
+          readOnly
+          onClick={props.click}
         />
       </form>
     </div>

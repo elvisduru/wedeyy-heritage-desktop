@@ -5,3 +5,26 @@
 .Feeds > div:last-child {
   margin-bottom: 59px;
 }
+
+.uploadOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 1001;
+}
+
+.uploadOverlay .header {
+  display: flex;
+  font-size: 20px;
+  line-height: 29px;
+  padding: 18px 11px;
+  font-family: heebobold;
+  justify-content: space-between;
+}
+
+.active {
+  font-family: heebobold;
+}

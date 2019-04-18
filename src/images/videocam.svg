@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="38" viewBox="0 0 48 38">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3a3a3a;
+      }
+
+      .cls-2 {
+        filter: url(#ic_videocam_24px);
+      }
+    </style>
+    <filter id="ic_videocam_24px" x="0" y="0" width="48" height="38" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-2" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <path id="ic_videocam_24px-2" data-name="ic_videocam_24px" class="cls-1" d="M26.333,13.5V7.667A1.672,1.672,0,0,0,24.667,6h-20A1.672,1.672,0,0,0,3,7.667V24.333A1.672,1.672,0,0,0,4.667,26h20a1.672,1.672,0,0,0,1.667-1.667V18.5L33,25.167V6.833Z" transform="translate(6)"/>
+  </g>
+</svg>
