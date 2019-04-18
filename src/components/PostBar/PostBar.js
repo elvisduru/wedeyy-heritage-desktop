@@ -1,14 +1,18 @@
 import React from "react";
 import styles from "./PostBar.module.css";
+import { Link } from "react-router-dom";
 
 const PostBar = props => {
   return (
     <div className={styles.PostBar}>
       <form action="#">
-        <img src={props.avatar} alt="avatar" />
+        <Link to="/profile/wall">
+          <img src={props.avatar} alt="avatar" />
+        </Link>
         <input
           type="text"
           placeholder="Share your thoughts, or post something."
+          disabled={props.disabled}
         />
       </form>
     </div>

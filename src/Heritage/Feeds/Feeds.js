@@ -17,7 +17,7 @@ const Feeds = () => {
   return (
     <div className={styles.Feeds}>
       <HeritageHeader />
-      <PostBar avatar="http://i.pravatar.cc/100" />
+      <PostBar avatar="http://i.pravatar.cc/100" disabled />
       <TrendingList />
       <FeedNotification
         image={starIcon}

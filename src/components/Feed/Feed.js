@@ -7,10 +7,12 @@ import shareIcon from "../../images/share.svg";
 import commentsIcon from "../../images/comments.svg";
 import styles from "./Feed.module.css";
 import Comments from "../Comments/Comments";
+import Likes from "../Likes/Likes";
 import playIcon from "../../images/play-button.svg";
 
 class Feed extends React.Component {
   state = {
+    likeOverlayOpen: false,
     commentOverlayOpen: false,
     feedOverlayImage: false,
     feedOverlayVideo: false
@@ -19,6 +21,12 @@ class Feed extends React.Component {
   handleCommentOverlay = () => {
     this.setState(prevState => {
       return { commentOverlayOpen: !prevState.commentOverlayOpen };
+    });
+  };
+
+  handleLikeOverlay = () => {
+    this.setState(prevState => {
+      return { likeOverlayOpen: !prevState.likeOverlayOpen };
     });
   };
 
@@ -42,6 +50,12 @@ class Feed extends React.Component {
   render() {
     let commentOverlay = this.state.commentOverlayOpen ? (
       <Comments click={this.handleCommentOverlay} />
+    ) : null;
+
+    let likeOverlay = this.state.likeOverlayOpen ? (
+      <div>
+        <Likes click={this.handleLikeOverlay} />
+      </div>
     ) : null;
 
     let content;
@@ -168,7 +182,12 @@ class Feed extends React.Component {
           </div>
           <div className={styles.bottom}>
             <span>
-              <span className={styles.likeCount}>{this.props.likeCount}</span>{" "}
+              <span
+                className={styles.likeCount}
+                onClick={this.handleLikeOverlay}
+              >
+                {this.props.likeCount}
+              </span>{" "}
               <span className={styles.mark}>Likes</span>
             </span>
             <div className="controls">
@@ -282,7 +301,12 @@ class Feed extends React.Component {
           </div>
           <div className={styles.bottom}>
             <span>
-              <span className={styles.likeCount}>{this.props.likeCount}</span>{" "}
+              <span
+                className={styles.likeCount}
+                onClick={this.handleLikeOverlay}
+              >
+                {this.props.likeCount}
+              </span>{" "}
               <span className={styles.mark}>Likes</span>
             </span>
             <div className="controls">
@@ -303,6 +327,7 @@ class Feed extends React.Component {
           </div>
         </div>
         {commentOverlay}
+        {likeOverlay}
         {ImageOverlay}
         {videoOverlay}
       </div>
