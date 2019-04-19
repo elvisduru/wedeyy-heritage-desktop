@@ -190,7 +190,7 @@ class Feeds extends React.Component {
               <img src={videocamIcon} alt="" />
               <p>Post Video</p>
             </div>
-            <div>
+            <div onClick={this.startElderUpload}>
               <img src={quoteIcon} alt="" />
               <p>Create Elders Say</p>
             </div>
