@@ -79,6 +79,13 @@ class Feeds extends React.Component {
     let newBackgroundSrc = e.currentTarget.src;
     let canvas = document.getElementsByClassName(styles.canvas)[0];
     canvas.firstChild.src = newBackgroundSrc;
+    if (
+      e.currentTarget.parentElement.previousSibling.lastChild.classList.contains(
+        styles.active
+      )
+    ) {
+      canvas.firstChild.classList.add(styles.filter);
+    }
   };
 
   render() {
