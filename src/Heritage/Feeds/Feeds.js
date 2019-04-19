@@ -25,21 +25,31 @@ import pictureBg3 from "../../images/picturebg3.jpg";
 import cameraIcon from "../../images/camera.svg";
 import videocamIcon from "../../images/videocam.svg";
 import quoteIcon from "../../images/quotes.svg";
+import photo1 from "../../images/photo1.jpg";
+import photo2 from "../../images/photo2.jpg";
+import photo3 from "../../images/photo3.jpg";
 
 class Feeds extends React.Component {
   state = {
-    startUpload: false,
+    startElderUpload: false,
+    startPhotoUpload: false,
+    startVideoUpload: false,
     selectedBackgrounds: [],
     wedeyyBackgrounds: [wedeyyBg0, wedeyyBg1, wedeyyBg2, wedeyyBg3, wedeyyBg4],
-    pictureBackgrounds: [pictureBg0, pictureBg1, pictureBg2, pictureBg3]
+    pictureBackgrounds: [pictureBg0, pictureBg1, pictureBg2, pictureBg3],
+    photos: [photo1, photo2, photo3]
   };
 
-  startUpload = () => {
-    this.setState({ startUpload: true });
+  startElderUpload = () => {
+    this.setState({ startElderUpload: true, startPhotoUpload: false });
+  };
+
+  startPhotoUpload = () => {
+    this.setState({ startPhotoUpload: true, startElderUpload: false });
   };
 
   cancelUpload = () => {
-    this.setState({ startUpload: false });
+    this.setState({ startElderUpload: false, startPhotoUpload: false });
   };
 
   handleSelection = e => {
@@ -82,14 +92,17 @@ class Feeds extends React.Component {
     if (
       e.currentTarget.parentElement.previousSibling.lastChild.classList.contains(
         styles.active
-      )
+      ) &&
+      e.currentTarget.parentElement.previousSibling.children.length !== 1
     ) {
       canvas.firstChild.classList.add(styles.filter);
+    } else {
+      canvas.firstChild.classList.remove(styles.filter);
     }
   };
 
   render() {
-    let uploadOverlay = this.state.startUpload ? (
+    let uploadOverlay = this.state.startElderUpload ? (
       <div className={styles.uploadOverlay}>
         <div className={styles.header}>
           <h2>Create Elders Say Post</h2>
@@ -122,6 +135,53 @@ class Feeds extends React.Component {
                 })}
           </div>
           <div className={styles.uploadType}>
+            <div onClick={this.startPhotoUpload}>
+              <img src={cameraIcon} alt="" />
+              <p>Post Photo</p>
+            </div>
+            <div>
+              <img src={videocamIcon} alt="" />
+              <p>Post Video</p>
+            </div>
+            <div>
+              <img src={quoteIcon} alt="" />
+              <p>Create Elders Say</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ) : null;
+
+    let uploadImageOverlay = this.state.startPhotoUpload ? (
+      <div className={styles.uploadOverlay}>
+        <div className={styles.header}>
+          <h2>Create Photo Post</h2>
+          <img src={closeIcon} alt="close" onClick={this.cancelUpload} />
+        </div>
+        <p className={styles.next}>Next</p>
+        <div className={styles.canvas}>
+          <img src={photo1} alt="" />
+        </div>
+        <div className={styles.footer}>
+          <div
+            className={styles.backgroundType}
+            style={{ justifyContent: "center" }}
+          >
+            <p className={styles.active}>Add Filter</p>
+          </div>
+          <div className={styles.backgrounds}>
+            {this.state.photos.map(background => {
+              return (
+                <img
+                  onClick={e => this.handleBackgroundChange(e)}
+                  key={background}
+                  src={background}
+                  alt=""
+                />
+              );
+            })}
+          </div>
+          <div className={styles.uploadType}>
             <div>
               <img src={cameraIcon} alt="" />
               <p>Post Photo</p>
@@ -142,7 +202,10 @@ class Feeds extends React.Component {
     return (
       <div className={styles.Feeds}>
         <HeritageHeader />
-        <PostBar avatar="http://i.pravatar.cc/100" click={this.startUpload} />
+        <PostBar
+          avatar="http://i.pravatar.cc/100"
+          click={this.startElderUpload}
+        />
         <TrendingList />
         <FeedNotification
           image={starIcon}
@@ -234,6 +297,7 @@ class Feeds extends React.Component {
           target="/broadcast"
         />
         {uploadOverlay}
+        {uploadImageOverlay}
       </div>
     );
   }
