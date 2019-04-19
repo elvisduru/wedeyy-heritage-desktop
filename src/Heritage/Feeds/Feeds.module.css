@@ -14,6 +14,7 @@
   bottom: 0;
   background-color: white;
   z-index: 1001;
+  margin-bottom: 0 !important;
 }
 
 .uploadOverlay .header {
@@ -23,8 +24,112 @@
   padding: 18px 11px;
   font-family: heebobold;
   justify-content: space-between;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .active {
   font-family: heebobold;
+  color: black;
+}
+
+.canvas {
+  width: 100%;
+  height: 310px;
+  position: relative;
+}
+
+.canvas img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas textarea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  text-align: center;
+  font-size: 33px;
+  line-height: 49px;
+  color: rgba(249, 249, 249, 1);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 1);
+  outline: none;
+  border: 0;
+  padding: 20px 0;
+  font-family: heebolight;
+}
+
+.canvas textarea::placeholder {
+  color: rgba(249, 249, 249, 0.418);
+  padding-top: 90px;
+}
+
+.uploadOverlay .footer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 13px;
+}
+
+.uploadOverlay .footer .backgroundType {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 43px 13px 30px;
+  font-size: 15px;
+  line-height: 22px;
+  color: #888888;
+}
+
+.uploadOverlay .backgrounds {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.uploadOverlay .backgrounds img {
+  width: 97px;
+  height: 97px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.uploadType {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #3a3a3a;
+  font-family: heebobold;
+  font-size: 13px;
+  line-height: 19px;
+  padding-right: 13px;
+  margin-top: 13px;
+  height: 107px;
+  width: 100%;
+}
+
+.uploadType > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(64px + 19px);
+}
+
+.uploadType > div img {
+  width: 50px;
+  margin-bottom: 5px;
+}
+
+.uploadOverlay .next {
+  display: flex;
+  justify-content: flex-end;
+  color: #518ca2;
+  font-family: heebomedium;
+  font-size: 17px;
+  line-height: 25px;
+  margin-right: 16px;
+  margin-top: 10px;
+  margin-bottom: 9px;
 }

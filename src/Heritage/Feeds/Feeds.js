@@ -22,6 +22,9 @@ import pictureBg0 from "../../images/picturebg.jpg";
 import pictureBg1 from "../../images/picturebg1.jpg";
 import pictureBg2 from "../../images/picturebg2.jpg";
 import pictureBg3 from "../../images/picturebg3.jpg";
+import cameraIcon from "../../images/camera.svg";
+import videocamIcon from "../../images/videocam.svg";
+import quoteIcon from "../../images/quotes.svg";
 
 class Feeds extends React.Component {
   state = {
@@ -45,17 +48,37 @@ class Feeds extends React.Component {
       e.currentTarget.nextSibling.classList.remove(styles.active);
       e.currentTarget.classList.add(styles.active);
       selectedBackgrounds = this.state.wedeyyBackgrounds.map(background => {
-        return <img key={background} src={background} alt="" />;
+        return (
+          <img
+            onClick={e => this.handleBackgroundChange(e)}
+            key={background}
+            src={background}
+            alt=""
+          />
+        );
       });
     }
     if (e.currentTarget.innerHTML === "Picture Background") {
       e.currentTarget.previousSibling.classList.remove(styles.active);
       e.currentTarget.classList.add(styles.active);
       selectedBackgrounds = this.state.pictureBackgrounds.map(background => {
-        return <img key={background} src={background} alt="" />;
+        return (
+          <img
+            onClick={e => this.handleBackgroundChange(e)}
+            key={background}
+            src={background}
+            alt=""
+          />
+        );
       });
     }
     this.setState({ selectedBackgrounds: selectedBackgrounds });
+  };
+
+  handleBackgroundChange = e => {
+    let newBackgroundSrc = e.currentTarget.src;
+    let canvas = document.getElementsByClassName(styles.canvas)[0];
+    canvas.firstChild.src = newBackgroundSrc;
   };
 
   render() {
@@ -65,9 +88,10 @@ class Feeds extends React.Component {
           <h2>Create Elders Say Post</h2>
           <img src={closeIcon} alt="close" onClick={this.cancelUpload} />
         </div>
+        <p className={styles.next}>Next</p>
         <div className={styles.canvas}>
           <img src={wedeyyBg1} alt="" />
-          <textarea />
+          <textarea maxLength="100" placeholder="Text goes here" />
         </div>
         <div className={styles.footer}>
           <div className={styles.backgroundType}>
@@ -80,8 +104,29 @@ class Feeds extends React.Component {
             {this.state.selectedBackgrounds.length
               ? this.state.selectedBackgrounds
               : this.state.wedeyyBackgrounds.map(background => {
-                  return <img key={background} src={background} alt="" />;
+                  return (
+                    <img
+                      onClick={e => this.handleBackgroundChange(e)}
+                      key={background}
+                      src={background}
+                      alt=""
+                    />
+                  );
                 })}
+          </div>
+          <div className={styles.uploadType}>
+            <div>
+              <img src={cameraIcon} alt="" />
+              <p>Post Photo</p>
+            </div>
+            <div>
+              <img src={videocamIcon} alt="" />
+              <p>Post Video</p>
+            </div>
+            <div>
+              <img src={quoteIcon} alt="" />
+              <p>Create Elders Say</p>
+            </div>
           </div>
         </div>
       </div>
