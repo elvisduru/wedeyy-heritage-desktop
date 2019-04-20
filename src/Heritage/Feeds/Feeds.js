@@ -37,19 +37,40 @@ class Feeds extends React.Component {
     selectedBackgrounds: [],
     wedeyyBackgrounds: [wedeyyBg0, wedeyyBg1, wedeyyBg2, wedeyyBg3, wedeyyBg4],
     pictureBackgrounds: [pictureBg0, pictureBg1, pictureBg2, pictureBg3],
-    photos: [photo1, photo2, photo3]
+    photos: [photo1, photo2, photo3],
+    filters: ["grayscale", "sepia", "saturate"]
   };
 
   startElderUpload = () => {
-    this.setState({ startElderUpload: true, startPhotoUpload: false });
+    this.setState({
+      startElderUpload: true,
+      startPhotoUpload: false,
+      startVideoUpload: false
+    });
   };
 
   startPhotoUpload = () => {
-    this.setState({ startPhotoUpload: true, startElderUpload: false });
+    this.setState({
+      startPhotoUpload: true,
+      startElderUpload: false,
+      startVideoUpload: false
+    });
+  };
+
+  startVideoUpload = () => {
+    this.setState({
+      startVideoUpload: true,
+      startPhotoUpload: false,
+      startElderUpload: false
+    });
   };
 
   cancelUpload = () => {
-    this.setState({ startElderUpload: false, startPhotoUpload: false });
+    this.setState({
+      startElderUpload: false,
+      startPhotoUpload: false,
+      startVideoUpload: false
+    });
   };
 
   handleSelection = e => {
@@ -101,6 +122,17 @@ class Feeds extends React.Component {
     }
   };
 
+  handleApplyFilter = e => {
+    let selectedfilter = e.currentTarget.style.filter;
+    let canvas = document.getElementsByClassName(styles.canvas)[0];
+    canvas.firstChild.style.filter = selectedfilter;
+  };
+
+  handleCancelFilter = () => {
+    document.getElementsByClassName(styles.canvas)[0].firstChild.style.filter =
+      "";
+  };
+
   render() {
     let uploadOverlay = this.state.startElderUpload ? (
       <div className={styles.uploadOverlay}>
@@ -139,7 +171,7 @@ class Feeds extends React.Component {
               <img src={cameraIcon} alt="" />
               <p>Post Photo</p>
             </div>
-            <div>
+            <div onClick={this.startVideoUpload}>
               <img src={videocamIcon} alt="" />
               <p>Post Video</p>
             </div>
@@ -170,12 +202,14 @@ class Feeds extends React.Component {
             <p className={styles.active}>Add Filter</p>
           </div>
           <div className={styles.backgrounds}>
-            {this.state.photos.map(background => {
+            <img onClick={this.handleCancelFilter} src={photo1} alt="" />
+            {this.state.filters.map(filter => {
               return (
                 <img
-                  onClick={e => this.handleBackgroundChange(e)}
-                  key={background}
-                  src={background}
+                  onClick={this.handleApplyFilter}
+                  key={filter}
+                  style={{ filter: `${filter}(5)` }}
+                  src={photo1}
                   alt=""
                 />
               );
@@ -183,6 +217,58 @@ class Feeds extends React.Component {
           </div>
           <div className={styles.uploadType}>
             <div>
+              <img src={cameraIcon} alt="" />
+              <p>Post Photo</p>
+            </div>
+            <div onClick={this.startVideoUpload}>
+              <img src={videocamIcon} alt="" />
+              <p>Post Video</p>
+            </div>
+            <div onClick={this.startElderUpload}>
+              <img src={quoteIcon} alt="" />
+              <p>Create Elders Say</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ) : null;
+
+    let uploadVideoOverlay = this.state.startVideoUpload ? (
+      <div className={styles.uploadOverlay}>
+        <div className={styles.header}>
+          <h2>Create Video Post</h2>
+          <img src={closeIcon} alt="close" onClick={this.cancelUpload} />
+        </div>
+        <p className={styles.next}>Next</p>
+        <div className={styles.canvas}>
+          <video controls>
+            <source src={video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className={styles.footer}>
+          <div
+            className={styles.backgroundType}
+            style={{ justifyContent: "center" }}
+          >
+            <p className={styles.active}>Add Filter</p>
+          </div>
+          <div className={styles.backgrounds}>
+            <img onClick={this.handleCancelFilter} src={photo1} alt="" />
+            {this.state.filters.map(filter => {
+              return (
+                <img
+                  onClick={this.handleApplyFilter}
+                  key={filter}
+                  style={{ filter: `${filter}(5)` }}
+                  src={photo1}
+                  alt=""
+                />
+              );
+            })}
+          </div>
+          <div className={styles.uploadType}>
+            <div onClick={this.startPhotoUpload}>
               <img src={cameraIcon} alt="" />
               <p>Post Photo</p>
             </div>
@@ -298,6 +384,7 @@ class Feeds extends React.Component {
         />
         {uploadOverlay}
         {uploadImageOverlay}
+        {uploadVideoOverlay}
       </div>
     );
   }

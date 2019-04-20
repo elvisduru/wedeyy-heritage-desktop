@@ -139,3 +139,10 @@
   margin-top: 10px;
   margin-bottom: 9px;
 }
+
+.canvas video {
+  object-fit: cover;
+  width: 100%;
+  height: 348px;
+  border-radius: 1px;
+}
