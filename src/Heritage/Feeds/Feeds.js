@@ -162,7 +162,10 @@ class Feeds extends React.Component {
           <textarea placeholder="Add Caption..." />
           <div className={styles.tagBox}>
             <button>Tag Someone</button>
-            <span />
+            <span>Kehinde,</span>
+            <span>Femi,</span>
+            <span>Tunji</span>
+            <span>&nbsp;and 7 more...</span>
           </div>
           <div className={styles.location}>
             <img src={markerIcon} alt="" />
