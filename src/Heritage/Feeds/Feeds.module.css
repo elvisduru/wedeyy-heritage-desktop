@@ -162,6 +162,7 @@
   font-family: heeboregular;
   font-size: 13px;
   line-height: 19px;
+  margin-bottom: 24px;
 }
 
 .footer textarea::placeholder {
