@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../images/Wedeyy Connect.png";
+import logo from "../../images/Wedeyy Heritage.png";
 
 const Logo = props => (
   <img

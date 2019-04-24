@@ -146,3 +146,18 @@
   height: 348px;
   border-radius: 1px;
 }
+
+.location img {
+  width: 20px;
+}
+
+.footer textarea {
+  box-shadow: 0 1px 1px rgba(245, 245, 245, 1);
+  outline: none;
+  border: 0;
+  width: 100%;
+}
+
+.nextOverlay .footer {
+  padding: 0;
+}

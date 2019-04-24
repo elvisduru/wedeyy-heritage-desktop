@@ -18,6 +18,7 @@
   font-size: 25px;
   margin-bottom: 5px;
   margin-top: 16px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 .FeedNotification p {

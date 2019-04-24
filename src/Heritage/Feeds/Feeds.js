@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Feeds.module.css";
+import cx from "classnames";
 import HeritageHeader from "../../components/HeritageHeader/HeritageHeader";
 import PostBar from "../../components/PostBar/PostBar";
 import TrendingList from "../../components/TrendingList/TrendingList";
@@ -13,6 +14,7 @@ import DateMatchList from "../../components/DateMatchList/DateMatchList";
 import video from "../../videos/live.mp4";
 import feedImg from "../../images/feed-image.jpg";
 import closeIcon from "../../images/close-button.svg";
+import markerIcon from "../../images/map-marker.svg";
 import wedeyyBg0 from "../../images/post-background.jpg";
 import wedeyyBg1 from "../../images/post-background1.png";
 import wedeyyBg2 from "../../images/post-background2.png";
@@ -38,7 +40,8 @@ class Feeds extends React.Component {
     wedeyyBackgrounds: [wedeyyBg0, wedeyyBg1, wedeyyBg2, wedeyyBg3, wedeyyBg4],
     pictureBackgrounds: [pictureBg0, pictureBg1, pictureBg2, pictureBg3],
     photos: [photo1, photo2, photo3],
-    filters: ["grayscale", "sepia", "saturate"]
+    filters: ["grayscale", "sepia", "saturate"],
+    openNext: false
   };
 
   startElderUpload = () => {
@@ -65,11 +68,23 @@ class Feeds extends React.Component {
     });
   };
 
+  handleNextOverlay = () => {
+    this.setState({
+      openNext: true
+    });
+  };
+
   cancelUpload = () => {
     this.setState({
       startElderUpload: false,
       startPhotoUpload: false,
       startVideoUpload: false
+    });
+  };
+
+  closeNextOverlay = () => {
+    this.setState({
+      openNext: false
     });
   };
 
@@ -134,13 +149,43 @@ class Feeds extends React.Component {
   };
 
   render() {
+    let nextOverlay = this.state.openNext ? (
+      <div className={cx(styles.uploadOverlay, styles.nextOverlay)}>
+        <div className={styles.header}>
+          <h2>Create Photo Post</h2>
+          <img src={closeIcon} alt="close" onClick={this.closeNextOverlay} />
+        </div>
+        <div className={styles.canvas}>
+          <img src={photo1} alt="" />
+        </div>
+        <div className={styles.footer}>
+          <textarea placeholder="Add Caption..." />
+          <div className={styles.tagBox}>
+            <button>Tag Someone</button>
+            <span />
+          </div>
+          <div className={styles.location}>
+            <img src={markerIcon} alt="" />
+            <span>Add Location</span>
+            <div className={styles.locations}>
+              <span>Lagos Nigeria</span>
+              <span>Ikeja</span>
+              <span>Opebi</span>
+            </div>
+          </div>
+          <button>Post</button>
+        </div>
+      </div>
+    ) : null;
     let uploadOverlay = this.state.startElderUpload ? (
       <div className={styles.uploadOverlay}>
         <div className={styles.header}>
           <h2>Create Elders Say Post</h2>
           <img src={closeIcon} alt="close" onClick={this.cancelUpload} />
         </div>
-        <p className={styles.next}>Next</p>
+        <p onClick={this.handleNextOverlay} className={styles.next}>
+          Next
+        </p>
         <div className={styles.canvas}>
           <img src={wedeyyBg1} alt="" />
           <textarea maxLength="100" placeholder="Text goes here" />
@@ -190,7 +235,9 @@ class Feeds extends React.Component {
           <h2>Create Photo Post</h2>
           <img src={closeIcon} alt="close" onClick={this.cancelUpload} />
         </div>
-        <p className={styles.next}>Next</p>
+        <p onClick={this.handleNextOverlay} className={styles.next}>
+          Next
+        </p>
         <div className={styles.canvas}>
           <img src={photo1} alt="" />
         </div>
@@ -239,7 +286,9 @@ class Feeds extends React.Component {
           <h2>Create Video Post</h2>
           <img src={closeIcon} alt="close" onClick={this.cancelUpload} />
         </div>
-        <p className={styles.next}>Next</p>
+        <p onClick={this.handleNextOverlay} className={styles.next}>
+          Next
+        </p>
         <div className={styles.canvas}>
           <video controls>
             <source src={video} type="video/mp4" />
@@ -385,6 +434,7 @@ class Feeds extends React.Component {
         {uploadOverlay}
         {uploadImageOverlay}
         {uploadVideoOverlay}
+        {nextOverlay}
       </div>
     );
   }
