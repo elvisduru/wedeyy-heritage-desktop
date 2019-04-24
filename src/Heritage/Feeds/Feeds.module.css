@@ -217,8 +217,8 @@
 }
 
 .nextOverlay .footer > button {
-  position: absolute;
-  bottom: 16px;
+  margin-top: 50px;
+  margin-bottom: 16px;
   align-self: flex-end;
   background-color: rgba(81, 140, 162, 1);
   font-size: 18px;
