@@ -11,6 +11,7 @@
   right: 0;
   z-index: 100;
   background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.19);
 }
 
 .Drawer a {
@@ -24,17 +25,18 @@
 }
 
 .Drawer svg {
-  width: 22px;
+  width: 25px;
   fill: #646464;
-  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.4));
 }
 
 .Drawer :global(.active) h6 {
   color: #000;
   font-family: heeboextrabold;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 .Drawer :global(.active) svg {
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.4));
   fill: #000;
 }
 

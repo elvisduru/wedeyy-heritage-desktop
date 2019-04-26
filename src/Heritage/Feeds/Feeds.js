@@ -13,7 +13,7 @@ import SuggestionList from "../../components/SuggestionList/SuggestionList";
 import DateMatchList from "../../components/DateMatchList/DateMatchList";
 import video from "../../videos/live.mp4";
 import feedImg from "../../images/feed-image.jpg";
-import closeIcon from "../../images/close-button.svg";
+import closeIcon from "../../images/cross.svg";
 import markerIcon from "../../images/map-marker.svg";
 import wedeyyBg0 from "../../images/post-background.jpg";
 import wedeyyBg1 from "../../images/post-background1.png";

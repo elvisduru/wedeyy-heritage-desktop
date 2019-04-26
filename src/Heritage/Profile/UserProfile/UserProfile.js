@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./UserProfile.module.css";
-import closeBtn from "../../../images/close-button.svg";
+import closeBtn from "../../../images/cross.svg";
 import avatarIcon from "../../../images/avatar.svg";
 import deleteIcon from "../../../images/delete.svg";
 import dashboardIcon from "../../../images/dashboard.svg";

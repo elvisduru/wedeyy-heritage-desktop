@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Comments.module.css";
 import CommentList from "../CommentList/CommentList";
-import closeBtn from "../../images/close-button.svg";
+import closeBtn from "../../images/cross.svg";
 import emojiIcon from "../../images/faces.svg";
 import albumIcon from "../../images/album.svg";
 

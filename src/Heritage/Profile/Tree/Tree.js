@@ -5,7 +5,7 @@ import infoIcon from "../../../images/round-info-button.svg";
 import settingsIcon from "../../../images/settings-cogwheel-button.svg";
 import PersonCard from "../../../components/PersonCard/PersonCard";
 import FamilyInfo from "../../../components/FamilyInfo/FamilyInfo";
-import closeIcon from "../../../images/close-button.svg";
+import closeIcon from "../../../images/cross.svg";
 import NavHeader from "../../../components/NavHeader/NavHeader";
 import Switch from "react-switch";
 import ToggleSelect from "../../../containers/ToggleSelect/ToggleSelect";

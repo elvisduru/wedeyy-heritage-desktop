@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./FamilyInfo.module.css";
-import closeIcon from "../../images/close-button.svg";
+import closeIcon from "../../images/cross.svg";
 
 const FamilyInfo = props => {
   return (

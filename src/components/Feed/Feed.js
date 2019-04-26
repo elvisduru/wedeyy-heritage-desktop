@@ -9,13 +9,18 @@ import styles from "./Feed.module.css";
 import Comments from "../Comments/Comments";
 import Likes from "../Likes/Likes";
 import playIcon from "../../images/play-button.svg";
+import crossIcon from "../../images/cross.svg";
+import downloadIcon from "../../images/download.svg";
+import warningIcon from "../../images/warning.svg";
+import linkIcon from "../../images/link.svg";
 
 class Feed extends React.Component {
   state = {
     likeOverlayOpen: false,
     commentOverlayOpen: false,
     feedOverlayImage: false,
-    feedOverlayVideo: false
+    feedOverlayVideo: false,
+    menuClicked: false
   };
 
   handleCommentOverlay = () => {
@@ -28,6 +33,18 @@ class Feed extends React.Component {
     this.setState(prevState => {
       return { likeOverlayOpen: !prevState.likeOverlayOpen };
     });
+  };
+
+  handleMenuOpened = () => {
+    this.setState({ menuClicked: true });
+  };
+
+  handleMenuClosed = () => {
+    this.setState({ menuClicked: false });
+  };
+
+  stopEventPropagation = e => {
+    e.stopPropagation();
   };
 
   static overlaySrc;
@@ -138,6 +155,7 @@ class Feed extends React.Component {
               </span>
             </div>
             <svg
+              onClick={this.handleMenuOpened}
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
@@ -237,6 +255,7 @@ class Feed extends React.Component {
               </span>
             </div>
             <svg
+              onClick={this.handleMenuOpened}
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
@@ -279,7 +298,7 @@ class Feed extends React.Component {
                 </span>
               </span>
             </div>
-            <img src={moreIcon} alt="More" />
+            <img src={moreIcon} onClick={this.handleMenuOpened} alt="More" />
           </div>
         </div>
         {content}
@@ -330,6 +349,32 @@ class Feed extends React.Component {
         {likeOverlay}
         {ImageOverlay}
         {videoOverlay}
+        {this.state.menuClicked ? (
+          <div className={styles.menu} onClick={this.handleMenuClosed}>
+            <div className={styles.options} onClick={this.stopEventPropagation}>
+              <div className={styles.option}>
+                <img
+                  src={crossIcon}
+                  alt="cancel"
+                  onClick={this.handleMenuClosed}
+                />
+                <span>Post Options</span>
+              </div>
+              <div className={styles.option}>
+                <img src={warningIcon} alt="cancel" />
+                <span>Report Post</span>
+              </div>
+              <div className={styles.option}>
+                <img src={linkIcon} alt="cancel" />
+                <span>Copy Post Link</span>
+              </div>
+              <div className={styles.option}>
+                <img src={downloadIcon} alt="cancel" />
+                <span>Save Post</span>
+              </div>
+            </div>
+          </div>
+        ) : null}
       </div>
     );
   }
