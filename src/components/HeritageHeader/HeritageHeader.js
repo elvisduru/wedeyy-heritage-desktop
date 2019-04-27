@@ -5,7 +5,7 @@ import broadcastIcon from "../../images/broadcast.svg";
 import menuIcon from "../../images/menu.svg";
 import { Link } from "react-router-dom";
 
-const HeritageHeader = props => {
+const HeritageHeader = () => {
   return (
     <div className={styles.HeritageHeader}>
       <Link to="/broadcast">

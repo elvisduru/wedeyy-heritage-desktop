@@ -44,6 +44,7 @@ class Feeds extends React.Component {
     openNext: false
   };
 
+  // Starts Elder Say Post
   startElderUpload = () => {
     this.setState({
       startElderUpload: true,
@@ -52,6 +53,7 @@ class Feeds extends React.Component {
     });
   };
 
+  // Starts Photo Post
   startPhotoUpload = () => {
     this.setState({
       startPhotoUpload: true,
@@ -60,6 +62,7 @@ class Feeds extends React.Component {
     });
   };
 
+  // Starts Video Post
   startVideoUpload = () => {
     this.setState({
       startVideoUpload: true,
@@ -68,12 +71,14 @@ class Feeds extends React.Component {
     });
   };
 
+  // Opens the Next Screen in Either Elder, Photo and Video Post
   handleNextOverlay = () => {
     this.setState({
       openNext: true
     });
   };
 
+  // Cancels Post Upload
   cancelUpload = () => {
     this.setState({
       startElderUpload: false,
@@ -82,12 +87,14 @@ class Feeds extends React.Component {
     });
   };
 
+  // Closes the Next Screen in Either Elder, Photo and Video Post
   closeNextOverlay = () => {
     this.setState({
       openNext: false
     });
   };
 
+  // Handles Wedeyy Background/Picture Background Toggle in Elder Say Post
   handleSelection = e => {
     let selectedBackgrounds;
     if (e.currentTarget.innerHTML === "Wedeyy Background") {
@@ -121,6 +128,7 @@ class Feeds extends React.Component {
     this.setState({ selectedBackgrounds: selectedBackgrounds });
   };
 
+  // Handles Background Change while selecting a background image
   handleBackgroundChange = e => {
     let newBackgroundSrc = e.currentTarget.src;
     let canvas = document.getElementsByClassName(styles.canvas)[0];
@@ -137,18 +145,21 @@ class Feeds extends React.Component {
     }
   };
 
+  // Handles Filter Change for Video and Photo Post
   handleApplyFilter = e => {
     let selectedfilter = e.currentTarget.style.filter;
     let canvas = document.getElementsByClassName(styles.canvas)[0];
     canvas.firstChild.style.filter = selectedfilter;
   };
 
+  // Cancels Filter Change for Video and Photo Post
   handleCancelFilter = () => {
     document.getElementsByClassName(styles.canvas)[0].firstChild.style.filter =
       "";
   };
 
   render() {
+    // Next Overlay
     let nextOverlay = this.state.openNext ? (
       <div className={cx(styles.uploadOverlay, styles.nextOverlay)}>
         <div className={styles.header}>
@@ -180,6 +191,7 @@ class Feeds extends React.Component {
         </div>
       </div>
     ) : null;
+    // Elder Say Overlay
     let uploadOverlay = this.state.startElderUpload ? (
       <div className={styles.uploadOverlay}>
         <div className={styles.header}>
@@ -232,6 +244,7 @@ class Feeds extends React.Component {
       </div>
     ) : null;
 
+    // Photo Post Overlay
     let uploadImageOverlay = this.state.startPhotoUpload ? (
       <div className={styles.uploadOverlay}>
         <div className={styles.header}>
@@ -283,6 +296,7 @@ class Feeds extends React.Component {
       </div>
     ) : null;
 
+    // Video Post Overlay
     let uploadVideoOverlay = this.state.startVideoUpload ? (
       <div className={styles.uploadOverlay}>
         <div className={styles.header}>
