@@ -18,7 +18,7 @@ const Likes = props => {
         </p>
         <img src={closeBtn} onClick={props.click} alt="close" />
       </div>
-      <PeopleList />
+      <PeopleList people={props.people} />
     </div>
   );
 };

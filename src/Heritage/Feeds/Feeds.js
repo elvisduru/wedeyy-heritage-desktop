@@ -30,6 +30,8 @@ import quoteIcon from "../../images/quotes.svg";
 import photo1 from "../../images/photo1.jpg";
 import photo2 from "../../images/photo2.jpg";
 import photo3 from "../../images/photo3.jpg";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import PeopleList from "../../components/PeopleList/PeopleList";
 
 class Feeds extends React.Component {
   state = {
@@ -41,7 +43,28 @@ class Feeds extends React.Component {
     pictureBackgrounds: [pictureBg0, pictureBg1, pictureBg2, pictureBg3],
     photos: [photo1, photo2, photo3],
     filters: ["grayscale", "sepia", "saturate"],
-    openNext: false
+    openNext: false,
+    openTag: false,
+    openLocation: false,
+    locationList: ["Nigeria, Lagos, Ikeja", "Nigeria, Ibadan", "United State, Utah, Salt Lake", "United State"],
+    people: [
+      {
+        username: "Susan Luisa",
+        avatar: "http://i.pravatar.cc/101",
+        fullname: "Chas Mccawley"
+      },
+      {
+        username: "Tommy Vercetti",
+        avatar: "http://i.pravatar.cc/102",
+        fullname: "Karyl Philpott"
+      },
+      {
+        username: "Carl Johnson",
+        avatar: "http://i.pravatar.cc/103",
+        fullname: "Eugene Rosen"
+      },
+    ]
+
   };
 
   // Starts Elder Say Post
@@ -77,6 +100,32 @@ class Feeds extends React.Component {
       openNext: true
     });
   };
+
+  // Opens the Tag People Overlay
+  openTagOverlay = () => {
+    this.setState({
+      openTag: true
+    })
+  }
+
+  closeTagOverlay = () => {
+    this.setState({
+      openTag: false
+    })
+  }
+
+  // Opens the Location Overlay
+  openLocationOverlay = () => {
+    this.setState({
+      openLocation: true
+    })
+  }
+
+  closeLocationOverlay = () => {
+    this.setState({
+      openLocation: false
+    })
+  }
 
   // Cancels Post Upload
   cancelUpload = () => {
@@ -159,6 +208,37 @@ class Feeds extends React.Component {
   };
 
   render() {
+    // Tag Overlay
+    let tagOverlay = this.state.openTag ? (
+      <div className={styles.tagOverlay}>
+        <div className={styles.tagHeader}>
+          <h4>Tag Someone</h4>
+          <p onClick={this.closeTagOverlay}>Continue</p>
+        </div>
+        <SearchBar placeholder="Find Someone" />
+        <PeopleList people={this.state.people} checkbox />
+      </div>
+    ) : null;
+
+    // Location Overlay
+    let locationOverlay = this.state.openLocation ? (
+      <div className={styles.tagOverlay}>
+        <div className={styles.tagHeader}>
+          <h4><img src={markerIcon} alt=""/> Add Location</h4>
+          <p onClick={this.closeLocationOverlay}>Continue</p>
+        </div>
+        <SearchBar placeholder="Find Location" />
+        <div className={styles.locations}>
+          <span>Lagos Nigeria <img src={closeIcon} alt=""/></span>
+          <span>Ikeja <img src={closeIcon} alt=""/></span>
+          <span>Opebi <img src={closeIcon} alt=""/></span>
+        </div>
+        <div className={styles.locationList}>
+          {this.state.locationList.map((location, index) => <p key={index}>{location}</p>)}
+        </div>
+      </div>
+    ) : null;
+
     // Next Overlay
     let nextOverlay = this.state.openNext ? (
       <div className={cx(styles.uploadOverlay, styles.nextOverlay)}>
@@ -172,7 +252,7 @@ class Feeds extends React.Component {
         <div className={styles.footer}>
           <textarea placeholder="Add Caption..." />
           <div className={styles.tagBox}>
-            <button>Tag Someone</button>
+            <button onClick={this.openTagOverlay}>Tag Someone</button>
             <span>Kehinde,</span>
             <span>Femi,</span>
             <span>Tunji</span>
@@ -180,7 +260,7 @@ class Feeds extends React.Component {
           </div>
           <div className={styles.location}>
             <img src={markerIcon} alt="" />
-            <span>Add Location</span>
+            <span onClick={this.openLocationOverlay}>Add Location</span>
             <div className={styles.locations}>
               <span>Lagos Nigeria</span>
               <span>Ikeja</span>
@@ -189,6 +269,8 @@ class Feeds extends React.Component {
           </div>
           <button>Post</button>
         </div>
+        {tagOverlay}
+        {locationOverlay}
       </div>
     ) : null;
     // Elder Say Overlay

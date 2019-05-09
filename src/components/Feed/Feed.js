@@ -20,7 +20,34 @@ class Feed extends React.Component {
     commentOverlayOpen: false,
     feedOverlayImage: false,
     feedOverlayVideo: false,
-    menuClicked: false
+    menuClicked: false,
+    likes: [
+      {
+        username: "Susan Luisa",
+        avatar: "http://i.pravatar.cc/101",
+        relationship: "family friend"
+      },
+      {
+        username: "Tommy Vercetti",
+        avatar: "http://i.pravatar.cc/102",
+        relationship: "family friend"
+      },
+      {
+        username: "Carl Johnson",
+        avatar: "http://i.pravatar.cc/103",
+        relationship: "family friend"
+      },
+      {
+        username: "John Doe",
+        avatar: "http://i.pravatar.cc/104",
+        relationship: "family friend"
+      },
+      {
+        username: "Mike McKauley",
+        avatar: "http://i.pravatar.cc/105",
+        relationship: "family friend"
+      }
+    ]
   };
 
   handleCommentOverlay = () => {
@@ -71,7 +98,7 @@ class Feed extends React.Component {
 
     let likeOverlay = this.state.likeOverlayOpen ? (
       <div>
-        <Likes click={this.handleLikeOverlay} />
+        <Likes click={this.handleLikeOverlay} people={this.state.likes} />
       </div>
     ) : null;
 

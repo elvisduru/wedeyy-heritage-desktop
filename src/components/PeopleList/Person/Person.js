@@ -12,9 +12,15 @@ const Person = props => {
           <span>{props.relationship}</span>
         </div>
       </div>
-      <button>
+      {props.checkbox ? (
+        <label className={styles.checkboButton}>
+          <input type="checkbox" className={styles.checkboxButton__input} id="choice1-1" name="choice1" />
+          <span className={styles.checkboxButton__control}></span>
+        </label>
+      ) : (<button>
         <img src={followIcon} alt="follow-icon" /> FOLLOW
-      </button>
+      </button>)}
+
     </div>
   );
 };

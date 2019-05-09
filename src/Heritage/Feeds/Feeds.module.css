@@ -174,7 +174,7 @@
 .nextOverlay .footer {
   display: flex;
   flex-direction: column;
-  padding: 13px;
+  padding: 13px 13px 0 13px;
 }
 
 .tagBox button,
@@ -229,4 +229,83 @@
   font-family: heebomedium;
   padding: 4px 19px;
   border: 0;
+}
+
+.tagOverlay {
+  position: fixed;
+  z-index: 1002;
+  top: 65px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.tagOverlay [alt="search"] {
+  left: 33px;
+}
+
+.tagOverlay > * {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.tagHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  margin-bottom: 14px;
+  font-family: heebobold;
+  font-size: 15px;
+}
+
+.tagHeader > p {
+  color: #518CA2;
+  font-size: 17px;
+}
+
+.tagHeader img {
+  width: 15px;
+  vertical-align: middle;
+}
+
+.tagOverlay > div:last-child {
+  margin-top: 0;
+}
+
+.tagOverlay > div:last-child > div:first-child {
+  margin-top: 0;
+}
+
+.tagOverlay > div.locations {
+  margin-top: 19px;
+}
+
+.tagOverlay > .locations > span:first-child {
+  margin-left: 0;
+}
+
+.tagOverlay > .locations > span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.tagOverlay > .locations > span img {
+  position: absolute;
+  width: 15px;
+  right: 4px;
+}
+
+.tagOverlay > div.locationList {
+  margin-top: 18px;
+}
+
+.locationList p {
+  font-size: 15px;
+  font-family: heebomedium;
+  line-height: 22px;
+  padding: 14px 0 14px 21px;
 }
