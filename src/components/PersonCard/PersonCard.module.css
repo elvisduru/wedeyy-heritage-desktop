@@ -7,6 +7,7 @@
 }
 
 .personCard {
+  max-width: 110px;
   padding: 17px 20px;
   display: flex;
   flex-direction: column;
@@ -14,23 +15,25 @@
   text-align: center;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16);
   background-color: white;
+  border-radius: 5px;
+  margin: 0 auto;
 }
 
-.personCard:first-child {
+/* .personCard:first-child {
   border-radius: 5px 0 0 5px;
 }
 
 .personCard:last-child {
   border-radius: 0 5px 5px 0;
-}
+} */
 
-.personCard:only-child {
+/* .personCard:only-child {
   border-radius: 5px;
-}
+} */
 
-.personCard:not(:last-child) {
+/* .personCard:not(:last-child) {
   border-right: 1px solid rgba(0, 0, 0, 0.05);
-}
+} */
 
 .personCard p:first-of-type {
   font-size: 13px;

@@ -1,4 +1,6 @@
 import React from "react";
+import OrgChart from 'react-orgchart';
+import 'react-orgchart/index.css';
 import styles from "./Tree.module.css";
 import SearchBar from "../../../components/SearchBar/SearchBar";
 import infoIcon from "../../../images/round-info-button.svg";
@@ -13,44 +15,35 @@ import UserProfile from "../UserProfile/UserProfile";
 
 class Tree extends React.Component {
   state = {
-    familyTree: [
-      [
+    familyTree: {
+      username: "Bill Lumbergh",
+      relationship: "Father",
+      avatar: "http://i.pravatar.cc/101",
+      children: [
         {
-          username: "Susan Luisa",
-          avatar: "http://i.pravatar.cc/101",
-          relationship: "Grand Father"
-        },
-        {
-          username: "Tommy Vercetti",
+          username: "Peter Gibbons",
+          relationship: "Brother",
           avatar: "http://i.pravatar.cc/102",
-          relationship: "Grand Mother"
-        }
-      ],
-      [
-        {
-          username: "Susan Luisa",
-          avatar: "http://i.pravatar.cc/103",
-          relationship: "Brother"
+          children: [
+            {
+              username: "Susan Gibbons",
+              relationship: "Daughter",
+              avatar: "http://i.pravatar.cc/103",
+            }
+          ]
         },
         {
-          username: "Tommy Vercetti",
+          username: "Milton Waddams",
+          relationship: "Cousin",
           avatar: "http://i.pravatar.cc/104",
-          relationship: "Cousin"
         },
         {
-          username: "Tommy Vercetti",
+          username: "Bob Slydell",
+          relationship: "Sister",
           avatar: "http://i.pravatar.cc/105",
-          relationship: "Sister"
-        }
-      ],
-      [
-        {
-          username: "Tommy Vercetti",
-          avatar: "http://i.pravatar.cc/106",
-          relationship: "Daughter"
-        }
+        },
       ]
-    ],
+    },
     checked: false,
     familyInfoOpen: false,
     uploadCrestOpen: false,
@@ -178,6 +171,15 @@ class Tree extends React.Component {
       </div>
     ) : null;
 
+    const nodeComponent = ({node}) => {
+      return <PersonCard
+                avatar={node.avatar}
+                username={node.username}
+                relationship={node.relationship}
+                click={this.openUserProfile}
+              />
+    }
+
     return (
       <div className={styles.Tree}>
         <div className={styles.header}>
@@ -190,23 +192,7 @@ class Tree extends React.Component {
           />
         </div>
         <div className={styles.chart}>
-          {this.state.familyTree.map((level, index) => {
-            return (
-              <div key={index} className={styles.level}>
-                {level.map((person, index) => {
-                  return (
-                    <PersonCard
-                      avatar={person.avatar}
-                      username={person.username}
-                      relationship={person.relationship}
-                      key={person.username + index}
-                      click={this.openUserProfile}
-                    />
-                  );
-                })}
-              </div>
-            );
-          })}
+          <OrgChart tree={this.state.familyTree} NodeComponent={nodeComponent} />
         </div>
         {familyInfo}
         {uploadCrest}
