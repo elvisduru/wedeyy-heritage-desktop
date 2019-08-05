@@ -6,7 +6,7 @@ const Comment = props => {
   return (
     <div className={styles.comment}>
       <div className={styles.top}>
-        <img src={props.avatar} alt="avatar" />
+        <img src={props.avatar} alt="" />
         <div className={styles.commentBox}>
           <div className={styles.header}>
             <h4>{props.username}</h4>

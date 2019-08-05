@@ -8,7 +8,7 @@ const ExploreCard = props => {
       style={{ backgroundImage: `url(${props.background}` }}
     >
       <div>
-        <img src={props.avatar} alt="avatar" />
+        <img src={props.avatar} alt="" />
         <p>{props.username}</p>
       </div>
       <div>

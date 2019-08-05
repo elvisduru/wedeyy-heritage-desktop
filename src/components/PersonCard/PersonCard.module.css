@@ -17,6 +17,7 @@
   background-color: white;
   border-radius: 5px;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 /* .personCard:first-child {

@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./NavHeader.module.css";
 import backIcon from "../../images/go-back-left-arrow.svg";
-import menuIcon from "../../images/menu.svg";
 import { Link } from "react-router-dom";
 
 const NavHeader = props => {
@@ -17,7 +16,6 @@ const NavHeader = props => {
         )}
         <h2>{props.heading}</h2>
       </div>
-      <img src={menuIcon} alt="menu" />
     </div>
   );
 };

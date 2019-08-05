@@ -6,7 +6,7 @@ const Person = props => {
   return (
     <div className={styles.Person}>
       <div className={styles.info}>
-        <img src={props.avatar} alt="avatar" />
+        <img src={props.avatar} alt="" />
         <div>
           <p>{props.username}</p>
           <span>{props.relationship}</span>

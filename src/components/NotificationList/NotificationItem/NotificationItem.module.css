@@ -1,6 +1,5 @@
 .NotificationItem {
   display: flex;
-  justify-content: space-between;
   padding: 21px 28px 21px 17px;
 }
 

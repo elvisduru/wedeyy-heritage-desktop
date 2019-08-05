@@ -87,12 +87,6 @@ const ExploreCardList = props => {
       username: "John Doe",
       avatar: "http://i.pravatar.cc/104",
       likeCount: "200k"
-    },
-    {
-      background: "http://i.pravatar.cc/301",
-      username: "Mike McKauley",
-      avatar: "http://i.pravatar.cc/105",
-      likeCount: "200k"
     }
   ];
   return (

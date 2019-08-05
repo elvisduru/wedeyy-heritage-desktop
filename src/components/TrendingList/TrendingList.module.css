@@ -12,7 +12,29 @@
   margin-bottom: 14px;
 }
 
-.TrendingList > div {
+.TrendingList :global(.simplebar-content)  {
   display: flex;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
 }
+/* 
+@media (min-width: 768px) {
+  .TrendingList {
+    height: unset;
+    padding: 20px;
+  }
+
+  .TrendingList h4 {
+    font-family: heeboextrabold;
+    font-size: 18px;
+  }
+
+  .TrendingList > div {
+    flex-wrap: wrap;
+    max-width: 400px;
+    overflow-x: unset;
+  }
+  
+  .TrendingList > div > a {
+    margin-bottom: 15px;
+  }
+} */

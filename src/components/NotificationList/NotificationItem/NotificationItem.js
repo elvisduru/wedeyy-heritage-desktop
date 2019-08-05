@@ -4,7 +4,7 @@ import styles from "./NotificationItem.module.css";
 const NotificationItem = props => {
   return (
     <div className={styles.NotificationItem}>
-      <img src={props.avatar} alt="avatar" />
+      <img src={props.avatar} alt="" />
       <div>
         <p>
           <strong>{props.username}</strong> {props.message}

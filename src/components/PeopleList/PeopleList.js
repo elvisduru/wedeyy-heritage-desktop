@@ -2,6 +2,10 @@ import React from "react";
 import styles from "./PeopleList.module.css";
 import Person from "./Person/Person";
 
+import SimpleBar from 'simplebar-react';
+
+import 'simplebar/dist/simplebar.min.css';
+
 const PeopleList = props => {
   let heading;
 
@@ -14,20 +18,24 @@ const PeopleList = props => {
   }
 
   return (
-    <div className={styles.PeopleList}>
-      {heading}
-      {props.people.map((person, index) => {
-        return (
-          <Person
-            username={person.username}
-            avatar={person.avatar}
-            relationship={person.relationship || person.fullname}
-            key={person.username + index}
-            checkbox={props.checkbox}
-          />
-        );
-      })}
-    </div>
+    <SimpleBar style={{
+      height: '90%',
+    }}>
+      <div className={styles.PeopleList}>
+        {heading}
+        {props.people.map((person, index) => {
+          return (
+            <Person
+              username={person.username}
+              avatar={person.avatar}
+              relationship={person.relationship || person.fullname}
+              key={person.username + index}
+              checkbox={props.checkbox}
+            />
+          );
+        })}
+      </div>
+    </SimpleBar>
   );
 };
 

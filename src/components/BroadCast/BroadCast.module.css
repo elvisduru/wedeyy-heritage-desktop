@@ -1,9 +1,10 @@
 .BroadCast {
-  width: 100vw;
   height: 100vh;
   position: relative;
   color: white;
   z-index: 1001;
+  /* margin-left: 26%; */
+  /* margin-right: 37%; */
 }
 
 .Header {

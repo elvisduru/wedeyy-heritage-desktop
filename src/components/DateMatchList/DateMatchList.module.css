@@ -12,7 +12,18 @@
   margin-bottom: 14px;
 }
 
-.DateMatchList > div {
+.DateMatchList :global(.simplebar-content)  {
   display: flex;
-  overflow-x: scroll;
+}
+
+@media (min-width: 768px) {
+  .DateMatchList {
+    padding: 20px;
+  }
+
+  .DateMatchList h4 {
+    font-family: heeboextrabold;
+    font-size: 18px;
+  }
+
 }

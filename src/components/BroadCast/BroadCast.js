@@ -86,14 +86,14 @@ class Broadcast extends React.Component {
               <p>Broadcasting: 08:29</p>
               <div className={styles.messages}>
                 <div className={styles.message}>
-                  <img src="http://i.pravatar.cc/100" alt="avatar" />
+                  <img src="http://i.pravatar.cc/100" alt="" />
                   <p>
                     <strong>Kenneth Gate: </strong>You guys should enjoy. I know
                     i am missing out a lot.
                   </p>
                 </div>
                 <div className={styles.message}>
-                  <img src="http://i.pravatar.cc/101" alt="avatar" />
+                  <img src="http://i.pravatar.cc/101" alt="" />
                   <p>
                     <strong>Iyabo Ojo: </strong>This is good stuff. Keep it up
                     bro. I have always enjoyed your live shows.

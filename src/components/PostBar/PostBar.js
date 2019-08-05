@@ -7,7 +7,7 @@ const PostBar = props => {
     <div className={styles.PostBar}>
       <form action="#">
         <Link to="/profile/wall">
-          <img src={props.avatar} alt="avatar" />
+          <img src={props.avatar} alt="" />
         </Link>
         <input
           type="text"

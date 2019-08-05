@@ -110,30 +110,46 @@ class Tree extends React.Component {
     this.setState({ treeSettingsOpen: false });
   };
 
+  closeAll = () => {
+    this.setState({
+      familyInfoOpen: false,
+      uploadCrestOpen: false,
+      treeSettingsOpen: false,
+      openUser: false
+    })
+  }
+
   render() {
     let familyInfo = this.state.familyInfoOpen ? (
-      <FamilyInfo
-        title={this.state.familyName}
-        body={this.state.familyInfo}
-        closeFamilyInfo={this.closeFamilyInfo}
-        openUploadCrest={this.openUploadCrest}
-      />
+      <div className={styles.OverlayWrapper}>
+        <div className={styles.backdrop} onClick={this.closeAll}></div>
+        <FamilyInfo
+          title={this.state.familyName}
+          body={this.state.familyInfo}
+          closeFamilyInfo={this.closeFamilyInfo}
+          openUploadCrest={this.openUploadCrest}
+        />
+      </div>
+      
     ) : null;
 
     let uploadCrest = this.state.uploadCrestOpen ? (
-      <div className={styles.uploadCrest}>
-        <img src={closeIcon} alt="close" onClick={this.closeUploadCrest} />
-        <h1>Upload Family Crest.</h1>
-        <div className={styles.body}>
-          <p>
-            Family crest is a symbolic representation of a family or a
-            bloodline.
+      <div className={styles.OverlayWrapper}>
+        <div className={styles.backdrop} onClick={this.closeAll}></div>
+        <div className={styles.uploadCrest}>
+          <img src={closeIcon} alt="close" onClick={this.closeUploadCrest} />
+          <h1>Upload Family Crest.</h1>
+          <div className={styles.body}>
+            <p>
+              Family crest is a symbolic representation of a family or a
+              bloodline.
           </p>
+          </div>
+          <div className={styles.controls}>
+            <button>Select File</button>
+          </div>
         </div>
-        <div className={styles.controls}>
-          <button>Select File</button>
-        </div>
-      </div>
+      </div> 
     ) : null;
 
     let treeSettings = this.state.treeSettingsOpen ? (

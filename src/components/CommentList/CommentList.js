@@ -1,6 +1,9 @@
 import React from "react";
-import styles from "./CommentList.module.css";
 import Comment from "./Comment/Comment";
+
+import SimpleBar from 'simplebar-react';
+
+import 'simplebar/dist/simplebar.min.css';
 
 const CommentList = props => {
   const comments = [
@@ -33,21 +36,26 @@ const CommentList = props => {
     }
   ];
   return (
-    <div className={styles.CommentList}>
-      {comments.map((comment, index) => {
-        return (
-          <Comment
-            username={comment.username}
-            avatar={comment.avatar}
-            comment={comment.comment}
-            time={comment.time}
-            likeCount={comment.likeCount}
-            replyCount={comment.replyCount}
-            key={comment.username + index}
-          />
-        );
-      })}
-    </div>
+    <SimpleBar style={{
+      height: '80%',
+      padding: '15px',
+    }}>
+      
+        {comments.map((comment, index) => {
+          return (
+            <Comment
+              username={comment.username}
+              avatar={comment.avatar}
+              comment={comment.comment}
+              time={comment.time}
+              likeCount={comment.likeCount}
+              replyCount={comment.replyCount}
+              key={comment.username + index}
+            />
+          );
+        })}
+    </SimpleBar>
+    
   );
 };
 

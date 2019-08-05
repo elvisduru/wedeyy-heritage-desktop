@@ -3,6 +3,10 @@ import styles from "./TrendingList.module.css";
 import TrendingItem from "./TrendingItem/TrendingItem";
 import { Link } from "react-router-dom";
 
+import SimpleBar from 'simplebar-react';
+
+import 'simplebar/dist/simplebar.min.css';
+
 const TrendingList = props => {
   const trendingList = [
     {
@@ -37,7 +41,7 @@ const TrendingList = props => {
   return (
     <div className={styles.TrendingList}>
       <h4>Trending</h4>
-      <div>
+      <SimpleBar style={{ width: '100%', display: 'flex'}}>
         {trendingList.map((trendingItem, index) => {
           return (
             <Link to="/explore/top" key={trendingItem.username + index}>
@@ -51,7 +55,7 @@ const TrendingList = props => {
             </Link>
           );
         })}
-      </div>
+      </SimpleBar> 
     </div>
   );
 };

@@ -2,6 +2,10 @@ import React from "react";
 import styles from "./DateMatchList.module.css";
 import DateMatchItem from "./DateMatchItem/DateMatchItem";
 
+import SimpleBar from 'simplebar-react';
+
+import 'simplebar/dist/simplebar.min.css';
+
 const DateMatchList = props => {
   const matchList = [
     {
@@ -33,18 +37,18 @@ const DateMatchList = props => {
   return (
     <div className={styles.DateMatchList}>
       <h4>Date Matches</h4>
-      <div>
-        {matchList.map((matchItem, index) => {
-          return (
-            <DateMatchItem
-              username={matchItem.username}
-              avatar={matchItem.avatar}
-              location={matchItem.location}
-              key={matchItem.username + index}
-            />
-          );
-        })}
-      </div>
+        <SimpleBar style={{ width: '100%', display: 'flex' }}>
+          {matchList.map((matchItem, index) => {
+            return (
+              <DateMatchItem
+                username={matchItem.username}
+                avatar={matchItem.avatar}
+                location={matchItem.location}
+                key={matchItem.username + index}
+              />
+            );
+          })}
+        </SimpleBar>
     </div>
   );
 };

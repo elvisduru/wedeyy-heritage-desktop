@@ -13,7 +13,7 @@ const TrendingItem = props => {
       </div>
       <div className={styles.bottom}>
         <p>
-          <img src={props.avatar} alt="avatar" />
+          <img src={props.avatar} alt="" />
           <span>{props.username}</span>
         </p>
       </div>

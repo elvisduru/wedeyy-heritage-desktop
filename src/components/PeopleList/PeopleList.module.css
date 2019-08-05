@@ -7,3 +7,16 @@
   font-size: 12px;
   font-family: heebolight;
 }
+
+@media (min-width: 768px) {
+  .PeopleList {
+    padding: 0 15px;
+    margin-top: unset;
+  }
+
+  .PeopleList h4 {
+    font-size: 18px;
+    font-family: heebobold;
+    margin-top: 60px;
+  }
+}

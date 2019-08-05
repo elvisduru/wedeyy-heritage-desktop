@@ -43,3 +43,36 @@
 .feed {
   width: 30px !important;
 }
+
+
+@media screen and (min-width: 768px) {
+  .Drawer {
+    right: unset;
+    top: 0;
+    height: 100vh;
+    box-shadow: unset;
+    flex-direction: column;
+    width: 26%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 18px;
+    padding-left: 12%;
+    border-right: 1px solid #e6ecf0;
+  }
+
+  .Drawer a {
+    flex-direction: row;
+    width: 140px;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .Drawer svg {
+    margin-right: 24px;
+  }
+
+  .Drawer img {
+    margin-left: -10px;
+    margin-bottom: 20px;
+  }
+}

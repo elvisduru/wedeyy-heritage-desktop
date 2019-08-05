@@ -29,3 +29,9 @@
 .PostBar input::placeholder {
   color: #888888;
 }
+
+@media (min-width: 768px) {
+  .PostBar {
+    margin-top: 0;
+  }
+}

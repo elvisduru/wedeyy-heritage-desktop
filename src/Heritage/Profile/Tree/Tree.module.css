@@ -37,21 +37,6 @@
   text-align: center;
 }
 
-.uploadCrest {
-  width: 100vw;
-  padding: 24px 34px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 39px;
-  background-color: white;
-  z-index: 1;
-}
-
 .controls {
   flex-shrink: 0;
   display: flex;
@@ -83,6 +68,8 @@
   right: 0;
   background-color: white;
   height: 100vh;
+  margin-left: 26%;
+  z-index: 1;
 }
 
 .setting label {
@@ -105,4 +92,34 @@
   line-height: 18px;
   margin-top: 10px;
   padding-right: 39px;
+}
+
+.OverlayWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2% 25%;
+  z-index: 1003;
+}
+
+.backdrop {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.uploadCrest {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  z-index: 1;
+  position: relative;
+  padding: 24px 34px;
+  background-color: white;
 }

@@ -1,3 +1,18 @@
 .Notifications {
-  padding-bottom: 59px;
+  margin-left: 26%;
+}
+
+@media (min-width: 768px) {
+  .Explore, .Header {
+    border-right: 1px solid #e6ecf0;
+  }
+
+  .Explore {
+    padding-bottom: 0;
+  }
+
+  .Header {
+    margin-right: 37%;
+    border-right: 0;
+  }
 }

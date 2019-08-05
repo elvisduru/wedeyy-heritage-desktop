@@ -15,7 +15,6 @@
   background-color: white;
   z-index: 1001;
   margin-bottom: 0 !important;
-  overflow-y: scroll;
 }
 
 .uploadOverlay .header {
@@ -308,4 +307,55 @@
   font-family: heebomedium;
   line-height: 22px;
   padding: 14px 0 14px 21px;
+}
+
+@media (min-width: 768px) {
+  .Feeds {
+    margin-left: 26%;
+    border-right: 1px solid #e6ecf0;
+    position: relative;
+    z-index: 101;
+  }
+
+  .Feeds > div:last-child {
+    margin-bottom: 0;
+  }
+
+  .OverlayWrapper, .Wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2% 25%;
+    z-index: 1003;
+  }
+
+  .OverlayWrapper {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .backdrop {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .uploadOverlay {
+    position: static;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    z-index: 1;
+    position: relative;
+    padding: 0;
+  }
+
+  .tagOverlay {
+    position: absolute;
+    top: 64px;
+  }
 }

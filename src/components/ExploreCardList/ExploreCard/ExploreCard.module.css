@@ -11,8 +11,6 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 4px;
-  float: left;
-  margin-left: 4px;
   margin-top: 4px;
 }
 
@@ -58,4 +56,24 @@
   font-size: 9px;
   font-family: heebolight;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+@media (min-width: 768px) {
+  .ExploreCard {
+    width: 240px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4px;
+    margin-top: 15px;
+  }
+
+  .ExploreCard > div:first-child p {
+    font-size: 14px;
+  }
+
+  .ExploreCard > div:last-child span {
+    font-size: 12px;
+  }
 }

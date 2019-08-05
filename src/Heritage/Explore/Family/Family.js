@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PeopleList from "../../../components/PeopleList/PeopleList";
 
 class Family extends Component {
@@ -33,10 +33,12 @@ class Family extends Component {
   }
   render() {
     return (
-      <Fragment>
+      <div style={{
+        marginTop: '120px'
+      }}>
         <PeopleList people={this.state.people} />
         <PeopleList people={this.state.people} topFamilies />
-      </Fragment>
+      </div>
     )
   }
 

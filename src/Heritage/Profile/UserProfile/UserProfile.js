@@ -8,9 +8,16 @@ import phoneMsgIcon from "../../../images/phone-msg.svg";
 import visibilityIcon from "../../../images/visibility.svg";
 import About from "../About/About";
 
+import SimpleBar from 'simplebar-react';
+
+import 'simplebar/dist/simplebar.min.css';
+
 const UserProfile = props => {
   return (
     <div className={styles.UserProfile}>
+      <SimpleBar style={{
+        height: '100%'
+      }}>
       <img
         className={styles.close}
         src={closeBtn}
@@ -18,7 +25,7 @@ const UserProfile = props => {
         onClick={props.click}
       />
       <div className={styles.PersonInfo}>
-        <img src={props.avatar ? props.avatar : avatarIcon} alt="avatar" />
+        <img src={props.avatar ? props.avatar : avatarIcon} alt="" />
         <h4>{props.username}</h4>
         <p>{props.occupation}</p>
       </div>
@@ -49,6 +56,7 @@ const UserProfile = props => {
         </div>
       </div>
       <About />
+      </SimpleBar>
     </div>
   );
 };

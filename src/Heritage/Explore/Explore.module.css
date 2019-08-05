@@ -27,6 +27,19 @@
   margin-left: 12px;
 }
 
-.Explore > div:nth-child(2) {
-  margin-top: 101px;
+@media (min-width: 768px) {
+  .Explore, .Header {
+    margin-left: 26%;
+    border-right: 1px solid #e6ecf0;
+  }
+
+  .Explore {
+    padding-bottom: 0;
+  }
+
+  .Header {
+    margin-right: 37%;
+    border-right: 0;
+  }
+  
 }

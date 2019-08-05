@@ -1,4 +1,15 @@
 .ExploreCardList {
   background: rgba(219, 219, 219, 1);
-  height: calc(100vh - 101px);
+  overflow-y: scroll;
+  margin-top: 101px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+  .ExploreCardList {
+    padding: 20px;
+    background-color: white;
+  }
 }

@@ -36,3 +36,9 @@
   line-height: 17px;
   color: rgba(58, 58, 58, 1);
 }
+
+@media (min-width: 768px) {
+  .SuggestionItem {
+    margin-bottom: 20px;
+  }
+}

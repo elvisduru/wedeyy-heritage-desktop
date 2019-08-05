@@ -5,9 +5,9 @@
   margin: 18px 0;
 }
 
-.Person:first-child {
+/* .Person:first-child {
   padding-top: 30px;
-}
+} */
 
 .info {
   display: flex;
@@ -103,4 +103,39 @@
 
 .checkboxButton__control {
   transform: scale(0.75);
+}
+
+@media (min-width: 768px) {
+  /* .Person:first-child {
+    padding-top: unset;
+  } */
+
+  .info p {
+    font-size: 15px;
+    font-family: heebobold;
+  }
+
+  .info span {
+    font-family: heebolight;
+    font-size: 13px;
+  }
+
+  .info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .Person button {
+    background-color: rgba(242, 242, 242, 1);
+    border: 1px solid rgba(242, 242, 242, 1);
+    border-radius: 5px;
+    padding: 3px 18px;
+    font-size: 12px;
+  }
+
+  .Person button:hover {
+    background-color: rgb(228, 225, 225);
+  }
 }
